@@ -11,7 +11,7 @@ function ProjectsWorks({ items }) {
                         <p className='font-medium'>{items.name}</p>
                         <p className='text-sm'>{items.tagLine}</p>
                     </div>
-                    <ProjectLook hover={true} />
+                    <ProjectLook hover={true} link={items.link}/>
                 </div>
             </div>
         </div>
