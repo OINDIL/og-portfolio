@@ -1,34 +1,54 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import LoadingBar from 'react-top-loading-bar';
+
 function ContactForm() {
+    const [loader, setLoader] = useState(false)
+    const [progress, setProgress] = useState(0)
     const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
-        emailjs
-            .sendForm('service_naw5khl', 'template_7opvvtl', form.current, {
-                publicKey: 'bFXs4wPx1AxeT1_N1',
-            })
+        setLoader(true)
+        setProgress(10)
+        setProgress(20)
+        setProgress(30)
+        setProgress(40)
+        setProgress(50)
+        setProgress(60)
+        emailjs.sendForm('service_naw5khl', 'template_7opvvtl', form.current, {
+            publicKey: 'bFXs4wPx1AxeT1_N1',
+        })
             .then(
                 () => {
-                    console.log('SUCCESS!');
+
+                    setProgress(70)
+                    setProgress(80)
+                    setProgress(90)
+                    setProgress(100)
                 },
                 (error) => {
+                    setProgress(100)
+                    setLoader(false)
                     console.log('FAILED...', error.text);
                 },
             );
     };
     return (
         <div>
-            <form ref={form} onSubmit={sendEmail} className='flex flex-col font-inter sm:w-1/2 w-full text-gray-400 gap-3'>
+            <form ref={form} onSubmit={sendEmail} className='flex flex-col font-inter sm:w-1/2 w-full text-gray-400 gap-2'>
+                {loader ? <LoadingBar progress={progress} onLoaderFinished={() => setProgress(0)} color='#030712' /> : null}
                 <label className=''>Name</label>
-                <input type="text" name="user_name" className='outline-none bg-inherit border-b' />
+                <input type="text" name="user_name" className='outline-none bg-inherit border-b' required/>
                 <label className=''>Email</label>
-                <input type="email" name="user_email" className='outline-none bg-inherit border-b' />
+                <input type="email" name="user_email" className='outline-none bg-inherit border-b' required/>
                 <label className=''>Message</label>
                 <textarea name="message" className='outline-none bg-inherit border-b' />
                 <center>
-                    <input type="submit" value="Send" className='font-medium border rounded-3xl cursor-pointer hover:bg-white hover:text-black w-1/2 transition ease-linear duration-300 py-2' />
+                    <button type='submit' className='flex justify-center gap-1 border rounded-3xl w-40 p-2 hover:bg-white hover:text-black transition ease-linear duration-300'>Send<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                    </button>
                 </center>
             </form>
         </div>

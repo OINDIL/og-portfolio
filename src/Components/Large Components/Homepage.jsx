@@ -56,7 +56,7 @@ function Homepage() {
 
                     <p className='sm:text-2xl text-xl'>Empower your digital vision with a comprehensive tech stack that blends creativity<br /> and functionality seamlessly. From dynamic <span className='font-medium'>React</span> interfaces to robust <span className='font-medium'>Node.js</span><br /> backends and efficient database management with <span className='font-medium'>MongoDB</span> and <span className='font-medium'>MySQL</span>,<br /> we craft tailored solutions that drive innovation and exceed expectations.<br /> Let's build your next digital masterpiece together.</p>
                     <Marquee gradient={true} gradientColor='white' gradientWidth={10}>
-                        <div className="overflow-hidden sm:text-5xl text-3xl text-gray-400 flex sm:gap-44 gap-10">
+                        <div className="overflow-hidden sm:text-6xl text-4xl text-gray-400 flex sm:gap-44 gap-10">
                             <i className="fa-brands fa-react max-w-none"></i>
                             <i className="fa-brands fa-js max-w-none"></i>
                             <i className="fa-brands fa-node-js max-w-none"></i>
@@ -75,9 +75,9 @@ function Homepage() {
                     <p className='sm:text-2xl text-xl font-medium'>Have an idea?</p>
                     <p className='sm:text-7xl text-5xl font-bold'>Let's go <span className="text-gray-400">create</span></p>
                     <nav className='flex justify-center space-x-16 font-medium underline'>
-                        <a href='/'>About Me</a>
-                        <a href='/'>Works</a>
-                        <a href='/'>Contact</a>
+                        <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>ABOUT ME</a>
+                        <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>WORKS</a>
+                        <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>CONTACTS</a>
                     </nav>
                 </div>
                 {/* FOOTER */}
@@ -95,9 +95,11 @@ function Homepage() {
                             </div>
                         ))}
                     </div>
-                    <div className="">
+                    <div>
+                        <p className='text-2xl text-gray-400 font-bold'>Stay Connected W/ Me</p>
                         <ContactForm/>
                     </div>
+                    <p className='text-gray-400 text-center'>&copy;2024 All Rigts Reserved.<br/>Designed with &#129293; by Oindil.</p>
                 </footer>
             </div>
         </div>
