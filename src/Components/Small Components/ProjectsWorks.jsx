@@ -9,7 +9,7 @@ function ProjectsWorks({ items }) {
                 <div className='font-inter flex items-center justify-between'>
                     <div>
                         <p className='font-medium'>{items.name}</p>
-                        <p className='text-sm'>{items.tagLine}</p>
+                        <p className='text-sm text-gray-600'>{items.tagLine}</p>
                     </div>
                     <ProjectLook hover={true} link={items.link}/>
                 </div>

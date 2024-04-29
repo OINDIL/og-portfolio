@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import LetsTalk from '../Small Components/Buttons/LetsTalk'
 import ViewAllWorks from '../Small Components/Buttons/ViewAllWorks'
 import ProjectsWorks from '../Small Components/ProjectsWorks'
 import Marquee from 'react-fast-marquee'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import textDev from '../Images/text_dev.png'
 import weather from '../Images/Weather.png'
@@ -10,6 +13,16 @@ import ytcrawler from '../Images/ytcrawler.png'
 import SocialMedia from '../Small Components/Buttons/SocialMedia'
 import ContactForm from '../Small Components/ContactForm'
 function Homepage() {
+    // Refs
+    const container = useRef()
+    // GSAP
+    gsap.registerPlugin(useGSAP)
+    gsap.registerPlugin(ScrollTrigger)
+
+    useGSAP(()=>{
+        
+    },{scope: container})
+
     const projects = [
         { name: 'Text.dev', tagLine: 'Generate Secure Passwords & More', a: 'https://oindil.github.io/textog/', image: textDev },
         { name: 'WeatherPoint', tagLine: 'Accurate Weather & Notes', a: '', image: weather },
@@ -25,12 +38,12 @@ function Homepage() {
         <div>
             <div className="h-svh">
                 <section className="p-12 font-inter flex flex-col gap-5">
-                    <div className="home-headings font-bold flex flex-col gap-5">
-                        <p className='sm:text-2xl text-xl'>Hello! I'm Oindil.</p>
-                        <p className='sm:text-7xl text-5xl'>MERN Stack Developer.<br /> For creating websites <br /> from <span className="text-gray-400">Scratch.</span></p>
+                    <div className="home-headings font-bold flex flex-col gap-5" ref={container}>
+                        <p className='gsap sm:text-2xl text-xl'>Hello! I'm Oindil.</p>
+                        <p className='gsap sm:text-7xl text-5xl'>Creating beautiful <span className="text-gray-400">&</span><br/> functional websites <br /> from <span className="text-gray-400">scratch.</span></p>
                     </div>
 
-                    <p className='sm:text-2xl text-xl'>I'll assist you in crafting contemporary, fully functional websites.</p>
+                    <p className='sm:text-2xl text-xl text-gray-600'>I'll assist you in crafting contemporary, fully functional websites.</p>
                     <LetsTalk hover={false}/>
                 </section>
                 {/* PROJECTS */}
@@ -50,31 +63,32 @@ function Homepage() {
                 {/* ABOUT PAGE */}
                 <section className="p-12 font-inter flex flex-col gap-5">
                     <div className="home-headings font-bold flex flex-col gap-5">
-                        <p className='sm:text-2xl text-xl'></p>
                         <p className='sm:text-7xl text-5xl'>A visual designer focused<br /> on creating emotional<br /> digital <span className="text-gray-400">experience.</span></p>
                     </div>
 
-                    <p className='sm:text-2xl text-xl'>Empower your digital vision with a comprehensive tech stack that blends creativity<br /> and functionality seamlessly. From dynamic <span className='font-medium'>React</span> interfaces to robust <span className='font-medium'>Node.js</span><br /> backends and efficient database management with <span className='font-medium'>MongoDB</span> and <span className='font-medium'>MySQL</span>,<br /> we craft tailored solutions that drive innovation and exceed expectations.<br /> Let's build your next digital masterpiece together.</p>
+                    <p className='sm:text-2xl text-xl text-gray-600'>Empower your digital vision with a comprehensive tech stack that blends creativity and functionality seamlessly. From dynamic <span className='font-medium'>React</span> interfaces to robust <span className='font-medium'>Node.js</span> backends and efficient database management with <span className='font-medium'>MongoDB</span> and <span className='font-medium'>MySQL</span>,<br/> I craft tailored solutions that drive innovation and exceed expectations. Let's build your next digital masterpiece <br/>together.</p>
                     <Marquee gradient={true} gradientColor='white' gradientWidth={10}>
-                        <div className="overflow-hidden sm:text-6xl text-4xl text-gray-400 flex sm:gap-44 gap-10">
-                            <i className="fa-brands fa-react max-w-none"></i>
-                            <i className="fa-brands fa-js max-w-none"></i>
-                            <i className="fa-brands fa-node-js max-w-none"></i>
-                            <i className="fa-brands fa-html5 max-w-none"></i>
-                            <i className="fa-brands fa-css3-alt max-w-none"></i>
-                            <i className="fa-brands fa-java max-w-none"></i>
-                            <i className="fa-brands fa-git max-w-none"></i>
-                            <i className="fa-brands fa-github max-w-none"></i>
-                            <i className="fa-solid fa-database mr-16"></i>
+                        <div className="overflow-hidden sm:text-6xl text-4xl text-gray-400 flex gap-20">
+                            <i className="fa-brands fa-react"></i>
+                            <i className="fa-brands fa-js"></i>
+                            <i className="fa-brands fa-node-js"></i>
+                            <i className="fa-brands fa-html5"></i>
+                            <i className="fa-brands fa-css3-alt"></i>
+                            <i className="fa-brands fa-java"></i>
+                            <i className="fa-brands fa-git"></i>
+                            <i className="fa-brands fa-github"></i>
+                            <i className="fa-solid fa-database"></i>
+                            <i className="fa-brands fa-bootstrap"></i>
+                            <i className="fa-brands fa-php"></i>
                         </div>
                     </Marquee>
                     <LetsTalk hover={true} />
                 </section>
                 {/* BEFORE FOOTER */}
-                <section className="p-12 font-inter flex flex-col gap-5 text-center">
+                <section className="p-12 font-inter flex flex-col gap-10 text-center">
                     <p className='sm:text-2xl text-xl font-medium'>Have an idea?</p>
                     <p className='sm:text-7xl text-5xl font-bold'>Let's go <span className="text-gray-400">create</span></p>
-                    <nav className='flex justify-center space-x-16 font-medium underline'>
+                    <nav className='flex justify-center gap-8 font-medium underline'>
                         <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>ABOUT ME</a>
                         <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>WORKS</a>
                         <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>CONTACTS</a>

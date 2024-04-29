@@ -42,10 +42,10 @@ function ContactForm() {
                 <input type="text" name="user_name" className='outline-none bg-inherit border-b' required/>
                 <label className=''>Email</label>
                 <input type="email" name="user_email" className='outline-none bg-inherit border-b' required/>
-                <label className=''>Message</label>
+                <label>Message</label>
                 <textarea name="message" className='outline-none bg-inherit border-b' />
                 <center>
-                    <button type='submit' className='flex justify-center gap-1 border rounded-3xl w-40 p-2 hover:bg-white hover:text-black transition ease-linear duration-300'>Send<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <button type='submit' className='flex font-medium justify-center gap-1 border rounded-3xl w-40 p-2 hover:bg-white hover:text-black transition ease-linear duration-300'>Send<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                     </svg>
                     </button>
