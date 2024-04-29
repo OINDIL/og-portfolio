@@ -24,17 +24,17 @@ function Homepage() {
     return (
         <div>
             <div className="h-svh">
-                <div className="p-12 font-inter flex flex-col gap-5">
+                <section className="p-12 font-inter flex flex-col gap-5">
                     <div className="home-headings font-bold flex flex-col gap-5">
                         <p className='sm:text-2xl text-xl'>Hello! I'm Oindil.</p>
                         <p className='sm:text-7xl text-5xl'>MERN Stack Developer.<br /> For creating websites <br /> from <span className="text-gray-400">Scratch.</span></p>
                     </div>
 
                     <p className='sm:text-2xl text-xl'>I'll assist you in crafting contemporary, fully functional websites.</p>
-                    <LetsTalk hover={false} />
-                </div>
+                    <LetsTalk hover={false}/>
+                </section>
                 {/* PROJECTS */}
-                <div className="projects-container p-12">
+                <section className="projects-container p-12">
                     <div className="font-inter flex items-center justify-between mb-6">
                         <p className='sm:text-2xl text-xl font-bold'>Selected Works</p>
                         <ViewAllWorks hover={true} />
@@ -46,9 +46,9 @@ function Homepage() {
                             </div>
                         ))}
                     </div>
-                </div>
+                </section>
                 {/* ABOUT PAGE */}
-                <div className="p-12 font-inter flex flex-col gap-5">
+                <section className="p-12 font-inter flex flex-col gap-5">
                     <div className="home-headings font-bold flex flex-col gap-5">
                         <p className='sm:text-2xl text-xl'></p>
                         <p className='sm:text-7xl text-5xl'>A visual designer focused<br /> on creating emotional<br /> digital <span className="text-gray-400">experience.</span></p>
@@ -69,9 +69,9 @@ function Homepage() {
                         </div>
                     </Marquee>
                     <LetsTalk hover={true} />
-                </div>
+                </section>
                 {/* BEFORE FOOTER */}
-                <div className="p-12 font-inter flex flex-col gap-5 text-center">
+                <section className="p-12 font-inter flex flex-col gap-5 text-center">
                     <p className='sm:text-2xl text-xl font-medium'>Have an idea?</p>
                     <p className='sm:text-7xl text-5xl font-bold'>Let's go <span className="text-gray-400">create</span></p>
                     <nav className='flex justify-center space-x-16 font-medium underline'>
@@ -79,16 +79,16 @@ function Homepage() {
                         <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>WORKS</a>
                         <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>CONTACTS</a>
                     </nav>
-                </div>
+                </section>
                 {/* FOOTER */}
-                <footer className='flex flex-col gap-10 font-inter p-12 bg-[#030712]'>
+                <footer className='p-12 flex flex-col gap-10 font-inter bg-[#030712]'>
                     <div>
                         <h1 className='font-bold text-2xl'>
                             <span className='text-gray-400'>Oindil</span><span className='text-white'>Golder.</span>
                         </h1>
                         <p className='sm:text-2xl text-xl text-white'>I'll assist you in crafting contemporary, fully functional websites.</p>
                     </div>
-                    <div className="flex flex-wrap justify-between gap-3">
+                    <div className="flex gap-4 justify-between flex-wrap">
                         {socialMedia.map((items, index) => (
                             <div key={index}>
                                 <SocialMedia items={items} hover={true} />
