@@ -729,6 +729,10 @@ video {
   overflow: hidden;
 }
 
+.text-clip{
+  text-overflow: clip;
+}
+
 .rounded-3xl{
   border-radius: 1.5rem;
 }
@@ -875,6 +879,10 @@ video {
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
+.text-transparent{
+  color: transparent;
+}
+
 .underline{
   text-decoration-line: underline;
 }
@@ -900,6 +908,10 @@ video {
 
 .duration-300{
   transition-duration: 300ms;
+}
+
+.duration-100{
+  transition-duration: 100ms;
 }
 
 .ease-linear{

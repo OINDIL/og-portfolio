@@ -3,9 +3,7 @@ import LetsTalk from '../Small Components/Buttons/LetsTalk'
 import ViewAllWorks from '../Small Components/Buttons/ViewAllWorks'
 import ProjectsWorks from '../Small Components/ProjectsWorks'
 import Marquee from 'react-fast-marquee'
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { motion } from 'framer-motion'
 
 import textDev from '../Images/text_dev.png'
 import weather from '../Images/Weather.png'
@@ -16,12 +14,6 @@ function Homepage() {
     // Refs
     const container = useRef()
     // GSAP
-    gsap.registerPlugin(useGSAP)
-    gsap.registerPlugin(ScrollTrigger)
-
-    useGSAP(()=>{
-        
-    },{scope: container})
 
     const projects = [
         { name: 'Text.dev', tagLine: 'Generate Secure Passwords & More', a: 'https://oindil.github.io/textog/', image: textDev },
@@ -37,17 +29,22 @@ function Homepage() {
     return (
         <div>
             <div className="h-svh">
-                <section className="p-12 font-inter flex flex-col gap-5">
+                <motion.section
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className="p-12 font-inter flex flex-col gap-5">
                     <div className="home-headings font-bold flex flex-col gap-5" ref={container}>
-                        <p className='gsap sm:text-2xl text-xl'>Hello! I'm Oindil.</p>
-                        <p className='gsap sm:text-7xl text-5xl'>Creating beautiful <span className="text-gray-400">&</span><br/> functional websites <br /> from <span className="text-gray-400">scratch.</span></p>
+                        <p id='title-1' className='sm:text-2xl text-xl'>Hello! I'm Oindil.</p>
+                        <p id='title-2' className='sm:text-7xl text-5xl'>Creating beautiful <span className="text-gray-400">&</span><br /> functional websites <br /> from <span className="text-gray-400">scratch.</span></p>
                     </div>
 
-                    <p className='sm:text-2xl text-xl text-gray-600'>I'll assist you in crafting contemporary, fully functional websites.</p>
-                    <LetsTalk hover={false}/>
-                </section>
+                    <p id='title-3' className='sm:text-2xl text-xl text-gray-600'>I'll assist you in crafting contemporary, fully functional websites.</p>
+                    <LetsTalk hover={false} />
+                </motion.section>
                 {/* PROJECTS */}
-                <section className="projects-container p-12">
+                <section
+                    className="projects-container p-12">
                     <div className="font-inter flex items-center justify-between mb-6">
                         <p className='sm:text-2xl text-xl font-bold'>Selected Works</p>
                         <ViewAllWorks hover={true} />
@@ -61,12 +58,16 @@ function Homepage() {
                     </div>
                 </section>
                 {/* ABOUT PAGE */}
-                <section className="p-12 font-inter flex flex-col gap-5">
+                <motion.section
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className="p-12 font-inter flex flex-col gap-5">
                     <div className="home-headings font-bold flex flex-col gap-5">
                         <p className='sm:text-7xl text-5xl'>A visual designer focused<br /> on creating emotional<br /> digital <span className="text-gray-400">experience.</span></p>
                     </div>
 
-                    <p className='sm:text-2xl text-xl text-gray-600'>Empower your digital vision with a comprehensive tech stack that blends creativity and functionality seamlessly. From dynamic <span className='font-medium'>React</span> interfaces to robust <span className='font-medium'>Node.js</span> backends and efficient database management with <span className='font-medium'>MongoDB</span> and <span className='font-medium'>MySQL</span>,<br/> I craft tailored solutions that drive innovation and exceed expectations. Let's build your next digital masterpiece <br/>together.</p>
+                    <p className='sm:text-2xl text-xl text-gray-600'>Empower your digital vision with a comprehensive tech stack that blends creativity and functionality seamlessly. From dynamic <span className='font-medium'>React</span> interfaces to robust <span className='font-medium'>Node.js</span> backends and efficient database management with <span className='font-medium'>MongoDB</span> and <span className='font-medium'>MySQL</span>,<br /> I craft tailored solutions that drive innovation and exceed expectations. Let's build your next digital masterpiece <br />together.</p>
                     <Marquee gradient={true} gradientColor='white' gradientWidth={10}>
                         <div className="overflow-hidden sm:text-6xl text-4xl text-gray-400 flex gap-20">
                             <i className="fa-brands fa-react"></i>
@@ -83,9 +84,13 @@ function Homepage() {
                         </div>
                     </Marquee>
                     <LetsTalk hover={true} />
-                </section>
+                </motion.section>
                 {/* BEFORE FOOTER */}
-                <section className="p-12 font-inter flex flex-col gap-10 text-center">
+                <motion.section
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className="p-12 font-inter flex flex-col gap-10 text-center">
                     <p className='sm:text-2xl text-xl font-medium'>Have an idea?</p>
                     <p className='sm:text-7xl text-5xl font-bold'>Let's go <span className="text-gray-400">create</span></p>
                     <nav className='flex justify-center gap-8 font-medium underline'>
@@ -93,9 +98,13 @@ function Homepage() {
                         <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>WORKS</a>
                         <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>CONTACTS</a>
                     </nav>
-                </section>
+                </motion.section>
                 {/* FOOTER */}
-                <footer className='p-12 flex flex-col gap-10 font-inter bg-[#030712]'>
+                <motion.footer
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className='p-12 flex flex-col gap-10 font-inter bg-[#030712]'>
                     <div>
                         <h1 className='font-bold text-2xl'>
                             <span className='text-gray-400'>Oindil</span><span className='text-white'>Golder.</span>
@@ -111,10 +120,10 @@ function Homepage() {
                     </div>
                     <div>
                         <p className='text-2xl text-gray-400 font-bold'>Stay Connected W/ Me</p>
-                        <ContactForm/>
+                        <ContactForm />
                     </div>
-                    <p className='text-gray-400 text-center'>&copy;2024 All Rigts Reserved.<br/>Designed with &#129293; by Oindil.</p>
-                </footer>
+                    <p className='text-gray-400 text-center'>&copy;2024 All Rigts Reserved.<br />Designed with &#129293; by Oindil.</p>
+                </motion.footer>
             </div>
         </div>
     )
