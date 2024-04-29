@@ -30,8 +30,8 @@ function Homepage() {
         <div>
             <div className="h-svh">
                 <motion.section
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ x: -100, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
                     className="p-12 font-inter flex flex-col gap-5">
                     <div className="home-headings font-bold flex flex-col gap-5" ref={container}>
@@ -43,12 +43,15 @@ function Homepage() {
                     <LetsTalk hover={false} />
                 </motion.section>
                 {/* PROJECTS */}
-                <section
-                    className="projects-container p-12">
-                    <div className="font-inter flex items-center justify-between mb-6">
+                <section className="projects-container p-12">
+                    <motion.div
+                        initial={{ x: -100, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        className="font-inter flex items-center justify-between mb-6">
                         <p className='sm:text-2xl text-xl font-bold'>Selected Works</p>
                         <ViewAllWorks hover={true} />
-                    </div>
+                    </motion.div>
                     <div className='flex flex-col justify-center items-center'>
                         {projects.map((items, index) => (
                             <div key={index}>
@@ -59,8 +62,8 @@ function Homepage() {
                 </section>
                 {/* ABOUT PAGE */}
                 <motion.section
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ x: -100, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
                     className="p-12 font-inter flex flex-col gap-5">
                     <div className="home-headings font-bold flex flex-col gap-5">
@@ -87,8 +90,8 @@ function Homepage() {
                 </motion.section>
                 {/* BEFORE FOOTER */}
                 <motion.section
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ x: -100, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
                     className="p-12 font-inter flex flex-col gap-10 text-center">
                     <p className='sm:text-2xl text-xl font-medium'>Have an idea?</p>
@@ -100,30 +103,32 @@ function Homepage() {
                     </nav>
                 </motion.section>
                 {/* FOOTER */}
-                <motion.footer
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                <footer className='p-12 font-inter bg-[#030712]'>
+                    <motion.div 
+                    initial={{ x: -100, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
-                    className='p-12 flex flex-col gap-10 font-inter bg-[#030712]'>
-                    <div>
-                        <h1 className='font-bold text-2xl'>
-                            <span className='text-gray-400'>Oindil</span><span className='text-white'>Golder.</span>
-                        </h1>
-                        <p className='sm:text-2xl text-xl text-white'>I'll assist you in crafting contemporary, fully functional websites.</p>
-                    </div>
-                    <div className="flex gap-4 justify-between flex-wrap">
-                        {socialMedia.map((items, index) => (
-                            <div key={index}>
-                                <SocialMedia items={items} hover={true} />
-                            </div>
-                        ))}
-                    </div>
-                    <div>
-                        <p className='text-2xl text-gray-400 font-bold'>Stay Connected W/ Me</p>
-                        <ContactForm />
-                    </div>
-                    <p className='text-gray-400 text-center'>&copy;2024 All Rigts Reserved.<br />Designed with &#129293; by Oindil.</p>
-                </motion.footer>
+                    className='flex flex-col gap-10'>
+                        <div>
+                            <h1 className='font-bold text-2xl'>
+                                <span className='text-gray-400'>Oindil</span><span className='text-white'>Golder.</span>
+                            </h1>
+                            <p className='sm:text-2xl text-xl text-white'>I'll assist you in crafting contemporary, fully functional websites.</p>
+                        </div>
+                        <div className="flex gap-4 justify-between flex-wrap">
+                            {socialMedia.map((items, index) => (
+                                <div key={index}>
+                                    <SocialMedia items={items} hover={true} />
+                                </div>
+                            ))}
+                        </div>
+                        <div>
+                            <p className='text-2xl text-gray-400 font-bold'>Stay Connected W/ Me</p>
+                            <ContactForm />
+                        </div>
+                        <p className='text-gray-400 text-center'>&copy;2024 All Rigts Reserved.<br />Designed with &#129293; by Oindil.</p>
+                    </motion.div>
+                </footer>
             </div>
         </div>
     )
