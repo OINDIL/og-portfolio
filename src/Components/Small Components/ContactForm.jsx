@@ -38,9 +38,9 @@ function ContactForm() {
         <div>
             <form ref={form} onSubmit={sendEmail} className='flex flex-col font-inter sm:w-1/2 w-full text-gray-400 gap-2'>
                 {loader ? <LoadingBar progress={progress} onLoaderFinished={() => setProgress(0)} color='#030712' /> : null}
-                <label className=''>Name</label>
+                <label>Name</label>
                 <input type="text" name="user_name" className='outline-none bg-inherit border-b' required/>
-                <label className=''>Email</label>
+                <label>Email</label>
                 <input type="email" name="user_email" className='outline-none bg-inherit border-b' required/>
                 <label>Message</label>
                 <textarea name="message" className='outline-none bg-inherit border-b' />

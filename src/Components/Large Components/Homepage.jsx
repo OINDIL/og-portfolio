@@ -10,21 +10,35 @@ import weather from '../Images/Weather.png'
 import ytcrawler from '../Images/ytcrawler.png'
 import SocialMedia from '../Small Components/Buttons/SocialMedia'
 import ContactForm from '../Small Components/ContactForm'
+import TechStack from '../Small Components/TechStack'
 function Homepage() {
     // Refs
     const container = useRef()
     // GSAP
 
     const projects = [
-        { name: 'Text.dev', tagLine: 'Generate Secure Passwords & More', a: 'https://oindil.github.io/textog/', image: textDev },
-        { name: 'WeatherPoint', tagLine: 'Accurate Weather & Notes', a: '', image: weather },
-        { name: 'Yt Crawler', tagLine: 'YouTube Channel info & Video data', a: '', image: ytcrawler }
+        { name: 'Text.dev', tagLine: 'Generate Secure Passwords & More', link: 'https://oindil.github.io/textog/', image: textDev},
+        { name: 'WeatherPoint', tagLine: 'Accurate Weather & Notes', link: '', image: weather},
+        { name: 'Yt Crawler', tagLine: 'YouTube Channel info & Video data', link: '', image: ytcrawler}
     ]
     const socialMedia = [
         { name: 'Github', link: 'https://github.com/OINDIL' },
         { name: 'LinkedIn', link: 'https://www.linkedin.com/in/oindil-golder/' },
         { name: 'Instagram', link: 'https://www.instagram.com/oindil.golder/' },
         { name: 'Facebook', link: 'https://www.facebook.com/profile.php?id=61555715216087' },
+    ]
+    const obj = [
+        <i className="fa-brands fa-react"></i>,
+        <i className="fa-brands fa-js"></i>,
+        <i className="fa-brands fa-node-js"></i>,
+        <i className="fa-brands fa-html5"></i>,
+        <i className="fa-brands fa-css3-alt"></i>,
+        <i className="fa-brands fa-java"></i>,
+        <i className="fa-brands fa-git"></i>,
+        <i className="fa-brands fa-github"></i>,
+        <i className="fa-solid fa-database"></i>,
+        <i className="fa-brands fa-bootstrap"></i>,
+        <i className="fa-brands fa-php"></i>
     ]
     return (
         <div>
@@ -55,7 +69,7 @@ function Homepage() {
                     <div className='flex flex-col justify-center items-center'>
                         {projects.map((items, index) => (
                             <div key={index}>
-                                <ProjectsWorks items={items} />
+                                <ProjectsWorks items={items}/>
                             </div>
                         ))}
                     </div>
@@ -72,19 +86,7 @@ function Homepage() {
 
                     <p className='sm:text-2xl text-xl text-gray-600'>Empower your digital vision with a comprehensive tech stack that blends creativity and functionality seamlessly. From dynamic <span className='font-medium'>React</span> interfaces to robust <span className='font-medium'>Node.js</span> backends and efficient database management with <span className='font-medium'>MongoDB</span> and <span className='font-medium'>MySQL</span>,<br /> I craft tailored solutions that drive innovation and exceed expectations. Let's build your next digital masterpiece <br />together.</p>
                     <Marquee gradient={true} gradientColor='white' gradientWidth={10}>
-                        <div className="overflow-hidden sm:text-6xl text-4xl text-gray-400 flex gap-20">
-                            <i className="fa-brands fa-react"></i>
-                            <i className="fa-brands fa-js"></i>
-                            <i className="fa-brands fa-node-js"></i>
-                            <i className="fa-brands fa-html5"></i>
-                            <i className="fa-brands fa-css3-alt"></i>
-                            <i className="fa-brands fa-java"></i>
-                            <i className="fa-brands fa-git"></i>
-                            <i className="fa-brands fa-github"></i>
-                            <i className="fa-solid fa-database"></i>
-                            <i className="fa-brands fa-bootstrap"></i>
-                            <i className="fa-brands fa-php"></i>
-                        </div>
+                        <TechStack obj={obj} />
                     </Marquee>
                     <LetsTalk hover={true} />
                 </motion.section>
@@ -104,11 +106,11 @@ function Homepage() {
                 </motion.section>
                 {/* FOOTER */}
                 <footer className='p-12 font-inter bg-[#030712]'>
-                    <motion.div 
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 1 }}
-                    className='flex flex-col gap-10'>
+                    <motion.div
+                        initial={{ x: -100, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        className='flex flex-col gap-10'>
                         <div>
                             <h1 className='font-bold text-2xl'>
                                 <span className='text-gray-400'>Oindil</span><span className='text-white'>Golder.</span>
