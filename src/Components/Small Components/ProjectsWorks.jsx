@@ -10,7 +10,7 @@ function ProjectsWorks({ items }) {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
             className='mb-4'>
-                <img className='rounded-xl mb-3 border shadow' src={items.image} alt="todo" />
+                <img className='rounded-xl mb-3 border shadow' src={items.image} alt="todo" width={1500} height={750}/>
                 <div className='font-inter flex items-center justify-between'>
                     <div>
                         <p className='font-medium'>{items.name}</p>
