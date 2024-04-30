@@ -3,8 +3,10 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Marquee from 'react-fast-marquee'
 
+import ytThumbnail from '../../Images/YtCrawlerThumbnail.png'
 import ytcrawler from '../../Images/ytcrawler.png'
 import TechStack from '../TechStack'
+
 function YtCrawlerDesc({ hover }) {
     const obj = [
         <i className="fa-brands fa-react"></i>,
@@ -31,9 +33,8 @@ function YtCrawlerDesc({ hover }) {
                 </div>
 
                 <p className='sm:text-2xl text-xl text-gray-600'>Revolutionizing YouTube Channel Discovery.</p>
-                {/* <LetsTalk hover={false} /> */}
                 <div className="flex sm:flex-row flex-col gap-5">
-                    <img className='rounded-xl border' src="https://placehold.co/200x270" alt="something" height={270} width={200} />
+                    <img className='rounded-xl border' src={ytThumbnail} alt="something" height={270} width={200} />
                     <div className="flex flex-col sm:w-1/2 w-auto gap-1">
                         <p className='font-bold text-xl'>YTcrawler</p>
                         <p className='font-medium text-gray-600'>theOGdev.</p>

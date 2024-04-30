@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 
 function ContactForm() {
     const [loader, setLoader] = useState(false)
+    const [isSent, setIsSent] = useState('')
     const [progress, setProgress] = useState(0)
     const form = useRef();
 
@@ -27,11 +28,12 @@ function ContactForm() {
                     setProgress(80)
                     setProgress(90)
                     setProgress(100)
+                    setIsSent('Your message was sent!')
                 },
                 (error) => {
                     setProgress(100)
                     setLoader(false)
-                    console.log('FAILED...', error.text);
+                    setIsSent('Failed to send the message!')
                 },
             );
     };
@@ -46,6 +48,7 @@ function ContactForm() {
                 <label>Message</label>
                 <textarea name="message" className='outline-none bg-inherit border-b' />
                 <center>
+                    <p className='font-medium'>{isSent}</p>
                     <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
