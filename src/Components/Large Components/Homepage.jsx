@@ -18,8 +18,8 @@ function Homepage() {
 
     const projects = [
         { name: 'Text.dev', tagLine: 'Generate Secure Passwords & More', link: 'https://oindil.github.io/textog/', image: textDev},
-        { name: 'WeatherPoint', tagLine: 'Accurate Weather & Notes', link: '/weather', image: weather},
-        { name: 'Yt Crawler', tagLine: 'YouTube Channel info & Video data', link: '/ytcrawler', image: ytcrawler}
+        { name: 'WeatherPoint', tagLine: 'Accurate Weather & Notes', link: '/og-portfolio/weather', image: weather},
+        { name: 'Yt Crawler', tagLine: 'YouTube Channel info & Video data', link: '/og-portfolio/ytcrawler', image: ytcrawler}
     ]
     const socialMedia = [
         { name: 'Github', link: 'https://github.com/OINDIL' },

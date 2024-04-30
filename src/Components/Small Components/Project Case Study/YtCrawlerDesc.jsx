@@ -25,7 +25,7 @@ function YtCrawlerDesc({ hover }) {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
                 className="p-12 font-inter flex flex-col gap-5">
-                <Link to='/'>
+                <Link to='/og-portfolio'>
                     <i className="fa-solid fa-arrow-left text-gray-400 hover:text-black transition ease-linear duration-100 "></i>
                 </Link>
                 <div className="font-bold flex flex-col gap-5">

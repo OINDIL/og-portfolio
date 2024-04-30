@@ -9,19 +9,19 @@ import ScrollToTop from './Components/Small Components/Router/ScrollToTop'
 import YtCrawlerDesc from './Components/Small Components/Project Case Study/YtCrawlerDesc'
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: '/og-portfolio',
       element: <><Navbar /><Homepage /></>,
       errorElement: <>OOPS! PAGE NOT FOUND</>
     },
     {
-      path: '/weather',
+      path: '/og-portfolio/weather',
       element:
         <ScrollToTop>
           <WeatherDesc />
         </ScrollToTop>
     },
     {
-      path: '/ytcrawler',
+      path: '/og-portfolio/ytcrawler',
       element:
         <ScrollToTop>
           <YtCrawlerDesc />
