@@ -17,9 +17,9 @@ function Homepage() {
     // GSAP
 
     const projects = [
-        { name: 'Text.dev', tagLine: 'Generate Secure Passwords & More', link: 'https://oindil.github.io/textog/', image: textDev },
-        { name: 'WeatherPoint', tagLine: 'Accurate Weather & Notes', link: '', image: weather },
-        { name: 'Yt Crawler', tagLine: 'YouTube Channel info & Video data', link: '', image: ytcrawler }
+        { name: 'Text.dev', tagLine: 'Generate Secure Passwords & More', link: 'https://oindil.github.io/textog/', image: textDev},
+        { name: 'WeatherPoint', tagLine: 'Accurate Weather & Notes', link: '/weather', image: weather},
+        { name: 'Yt Crawler', tagLine: 'YouTube Channel info & Video data', link: '/ytcrawler', image: ytcrawler}
     ]
     const socialMedia = [
         { name: 'Github', link: 'https://github.com/OINDIL' },
@@ -56,7 +56,7 @@ function Homepage() {
                 <LetsTalk hover={false} />
             </motion.section>
             {/* PROJECTS */}
-            <section className="projects-container p-12">
+            <section className="projects-container p-12" id='projects'>
                 <motion.div
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -75,6 +75,7 @@ function Homepage() {
             </section>
             {/* ABOUT PAGE */}
             <motion.section
+                id='about'
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -98,13 +99,13 @@ function Homepage() {
                 <p className='sm:text-2xl text-xl font-medium'>Have an idea?</p>
                 <p className='sm:text-7xl text-5xl font-bold'>Let's go <span className="text-gray-400">create</span></p>
                 <nav className='flex justify-center gap-8 font-medium underline'>
-                    <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>ABOUT ME</a>
-                    <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>WORKS</a>
-                    <a href='/' className='hover:text-black text-gray-400 transition ease-linear duration-300'>CONTACTS</a>
+                    <a href='#about' className='hover:text-black text-gray-400 transition ease-linear duration-300'>ABOUT ME</a>
+                    <a href='#projects' className='hover:text-black text-gray-400 transition ease-linear duration-300'>WORKS</a>
+                    <a href='#contact' className='hover:text-black text-gray-400 transition ease-linear duration-300'>CONTACTS</a>
                 </nav>
             </motion.section>
             {/* FOOTER */}
-            <footer className='p-12 font-inter bg-[#030712]'>
+            <footer id='contact' className='p-12 font-inter bg-[#030712]'>
                 <motion.div
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}

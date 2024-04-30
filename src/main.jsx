@@ -4,8 +4,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Navbar from './Components/Small Components/Navbar'
 import Homepage from './Components/Large Components/Homepage'
-import ProjectsDesc from './Components/Small Components/Project Case Study/ProjectsDesc'
+import WeatherDesc from './Components/Small Components/Project Case Study/WeatherDesc'
 import ScrollToTop from './Components/Small Components/Router/ScrollToTop'
+import YtCrawlerDesc from './Components/Small Components/Project Case Study/YtCrawlerDesc'
   const router = createBrowserRouter([
     {
       path: '/',
@@ -16,7 +17,14 @@ import ScrollToTop from './Components/Small Components/Router/ScrollToTop'
       path: '/weather',
       element:
         <ScrollToTop>
-          <ProjectsDesc />
+          <WeatherDesc />
+        </ScrollToTop>
+    },
+    {
+      path: '/ytcrawler',
+      element:
+        <ScrollToTop>
+          <YtCrawlerDesc />
         </ScrollToTop>
     }
   ])
