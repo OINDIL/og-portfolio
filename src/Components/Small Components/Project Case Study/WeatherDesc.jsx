@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Marquee from 'react-fast-marquee'
 
 import weatherThumbnail from '../../Images/WeatherPointThumbnail.png'
-import weather from '../../Images/Weather.png'
+import weather from '../../Images/weather.png'
 import TechStack from '../TechStack'
 function WeatherDesc({ hover }) {
     const obj = [

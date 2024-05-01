@@ -5,9 +5,10 @@ import ProjectsWorks from '../Small Components/ProjectsWorks'
 import Marquee from 'react-fast-marquee'
 import { motion } from 'framer-motion'
 
-import textDev from '../Images/text_dev.png'
-import weather from '../Images/Weather.png'
 import ytcrawler from '../Images/ytcrawler.png'
+import weather from '../Images/weather.png'
+import textDev from '../Images/text_dev.png'
+
 import SocialMedia from '../Small Components/Buttons/SocialMedia'
 import ContactForm from '../Small Components/ContactForm'
 import TechStack from '../Small Components/TechStack'
