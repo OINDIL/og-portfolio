@@ -9,7 +9,7 @@ function LetsTalk({ hover }) {
             <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                initial={{ x:-60,opacity: 0 }}
+                initial={{ x:-70,opacity: 0 }}
                 whileInView={{ x:0,opacity: 1 }}
                 transition={{ duration: 1 }}
                 className={`sm:w-32 w-full font-medium flex justify-center gap-2 border py-2 px-3 ${mode ? `border-white` : `border-black`} rounded-3xl ${hover ? `hover:bg-black hover:text-white` : `bg-black text-white`} transition ease-linear duration-100`}><a href='#contact' className='flex justify-center' style={{ width: '100%' }}>Let's talk

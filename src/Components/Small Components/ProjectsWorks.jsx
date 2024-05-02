@@ -1,8 +1,10 @@
 import React from 'react'
 import ProjectLook from './Buttons/ProjectsLook'
 import { motion } from 'framer-motion'
+import { useDarkContext } from '../Contexts/DarkModeContext'
 
 function ProjectsWorks({ items }) {
+    const { mode } = useDarkContext()
     return (
         <div>
             <motion.div 
@@ -14,7 +16,7 @@ function ProjectsWorks({ items }) {
                 <div className='font-inter flex items-center justify-between'>
                     <div>
                         <p className='font-medium'>{items.name}</p>
-                        <p className='text-sm text-gray-600'>{items.tagLine}</p>
+                        <p className={`text-sm ${ mode ? `text-gray-400` : `text-gray-600`}`}>{items.tagLine}</p>
                     </div>
                     <ProjectLook hover={true} link={items.link} />
                 </div>

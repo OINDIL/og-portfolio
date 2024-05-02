@@ -45,20 +45,20 @@ function Homepage() {
     return (
         <div>
             <section
-                className={`p-12 font-inter flex flex-col gap-5 ${mode ? `bg-black` : null}`}>
+                className={`p-12 font-inter flex flex-col gap-5 transition ease-linear duration-300 ${mode ? `bg-black text-white` : null}`}>
                 <div className="home-headings font-bold flex flex-col gap-5" >
                     <motion.p
 
                         initial={{ x: -80, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
-                        id='title-1' className={`sm:text-2xl text-xl ${mode ? `text-white` : null}`}>Hello! I'm Oindil.</motion.p>
+                        id='title-1' className={`sm:text-2xl text-xl`}>Hello! I'm Oindil.</motion.p>
                     <motion.p
 
                         initial={{ x: -80, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
-                        id='title-2' className={`sm:text-7xl text-5xl ${mode ? `text-white` : null}`}>Creating beautiful <span className="text-gray-400">&</span><br /> functional websites <br /> from <span className="text-gray-400">scratch.</span></motion.p>
+                        id='title-2' className={`sm:text-7xl text-5xl`}>Creating beautiful <span className="text-gray-400">&</span><br /> functional websites <br /> from <span className="text-gray-400">scratch.</span></motion.p>
                 </div>
 
                 <motion.p
@@ -69,11 +69,8 @@ function Homepage() {
                 <LetsTalk hover={false} />
             </section>
             {/* PROJECTS */}
-            <section className="projects-container p-12" id='projects'>
+            <section className={`projects-container p-12 transition ease-linear duration-300 ${mode ? `bg-black text-white` : null}`}>
                 <div
-                    initial={{ x: -80, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 1 }}
                     className="font-inter flex items-center justify-between mb-6">
                     <motion.p
                         initial={{ x: -80, opacity: 0 }}
@@ -93,7 +90,7 @@ function Homepage() {
             {/* ABOUT PAGE */}
             <section
                 id='about'
-                className="p-12 font-inter flex flex-col gap-5">
+                className={`p-12 font-inter flex flex-col gap-5 ${ mode ? `bg-black text-white` : null}`}>
                 <div className="home-headings font-bold flex flex-col gap-5">
                     <motion.p
                         initial={{ x: -80, opacity: 0 }}
@@ -103,19 +100,18 @@ function Homepage() {
                 </div>
 
                 <motion.p
-
                     initial={{ x: -80, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
-                    className='sm:text-2xl text-xl text-gray-600'>Empower your digital vision with a comprehensive tech stack that blends creativity and functionality seamlessly. From dynamic <span className='font-medium'>React</span> interfaces to robust <span className='font-medium'>Node.js</span> backends and efficient database management with <span className='font-medium'>MongoDB</span> and <span className='font-medium'>MySQL</span>,<br /> I craft tailored solutions that drive innovation and exceed expectations. Let's build your next digital masterpiece <br />together.</motion.p>
-                <Marquee gradient={true} gradientColor='white' gradientWidth={10}>
+                    className={`sm:text-2xl text-xl ${ mode ? `text-gray-400` : `text-gray-600`}`}>Empower your digital vision with a comprehensive tech stack that blends creativity and functionality seamlessly. From dynamic <span className='font-medium'>React</span> interfaces to robust <span className='font-medium'>Node.js</span> backends and efficient database management with <span className='font-medium'>MongoDB</span> and <span className='font-medium'>MySQL</span>,<br /> I craft tailored solutions that drive innovation and exceed expectations. Let's build your next digital masterpiece <br />together.</motion.p>
+                <Marquee gradient={true} gradientColor={ mode ? 'black' : 'white'} gradientWidth={10}>
                     <TechStack obj={obj} />
                 </Marquee>
                 <LetsTalk hover={true} />
             </section>
             {/* BEFORE FOOTER */}
             <section
-                className="p-12 font-inter flex flex-col gap-10 text-center">
+                className={`p-12 font-inter flex flex-col gap-10 text-center ${ mode ? `bg-black text-white` : null}`}>
                 <motion.p
                     initial={{ x: -80, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -131,17 +127,17 @@ function Homepage() {
                         initial={{ x: -80, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
-                        href='#about' className='hover:text-black text-gray-400 transition ease-linear duration-300'>ABOUT ME</motion.a>
+                        href='#about' className={`hover:text-${ mode ? `white` : `black`} text-gray-400 transition ease-linear duration-300`}>ABOUT ME</motion.a>
                     <motion.a
                         initial={{ x: -80, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
-                        href='#projects' className='hover:text-black text-gray-400 transition ease-linear duration-300'>WORKS</motion.a>
+                        href='#projects' className={`hover:text-${ mode ? `white` : `black`} text-gray-400 transition ease-linear duration-300`}>WORKS</motion.a>
                     <motion.a
                         initial={{ x: -80, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
-                        href='#contact' className='hover:text-black text-gray-400 transition ease-linear duration-300'>CONTACTS</motion.a>
+                        href='#contact' className={`hover:text-${ mode ? `white` : `black`} text-gray-400 transition ease-linear duration-300`}>CONTACTS</motion.a>
                 </nav>
             </section>
             {/* FOOTER */}

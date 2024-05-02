@@ -6,13 +6,10 @@ import { useDarkContext } from '../Contexts/DarkModeContext'
 function Navbar() {
     const { mode, setMode } = useDarkContext()
 
-
-    console.log(mode)
-
     return (
         <div>
             <nav
-                className={`font-inter py-5 px-12 flex items-center justify-between ${mode ? `bg-black text-white` : null}`}>
+                className={`font-inter py-5 px-12 flex items-center justify-between transition ease-linear duration-300 ${mode ? `bg-black text-white` : null}`}>
                 <motion.h1
                     initial={{ x: -80, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
