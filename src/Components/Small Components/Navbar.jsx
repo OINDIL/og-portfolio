@@ -2,19 +2,39 @@ import React from 'react'
 import LetsTalk from './Buttons/LetsTalk'
 import { motion } from 'framer-motion'
 
+import { useDarkContext } from '../Contexts/DarkModeContext'
 function Navbar() {
+    const { mode, setMode } = useDarkContext()
+
+
+    console.log(mode)
+
     return (
         <div>
-            <motion.nav 
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
-            className='font-inter py-5 px-12 flex items-center justify-between'>
-                <h1 className='font-bold text-xl'>
+            <nav
+                className={`font-inter py-5 px-12 flex items-center justify-between ${mode ? `bg-black text-white` : null}`}>
+                <motion.h1
+                    initial={{ x: -80, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className='font-bold text-xl'>
                     <span className='text-gray-400'>Oindil</span>Golder.
-                </h1>
-                <LetsTalk hover={true} />
-            </motion.nav>
+                </motion.h1>
+                <div className='flex items-center gap-5'>
+                    <motion.button
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                        initial={{ x: -80, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        onClick={() => setMode(!mode)}
+                    >
+                        {mode ? <i className="fa-solid fa-sun"></i> : <i className="fa-solid fa-moon"></i>}
+
+                    </motion.button>
+                    <LetsTalk hover={true} />
+                </div>
+            </nav>
         </div>
     )
 }

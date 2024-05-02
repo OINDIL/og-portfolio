@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import LetsTalk from '../Small Components/Buttons/LetsTalk'
 import ViewAllWorks from '../Small Components/Buttons/ViewAllWorks'
 import ProjectsWorks from '../Small Components/ProjectsWorks'
@@ -12,15 +12,16 @@ import textDev from '../Images/text_dev.png'
 import SocialMedia from '../Small Components/Buttons/SocialMedia'
 import ContactForm from '../Small Components/ContactForm'
 import TechStack from '../Small Components/TechStack'
+
+import { useDarkContext } from '../Contexts/DarkModeContext'
 function Homepage() {
-    // Refs
-    const container = useRef()
-    // GSAP
+    // CONTEXT
+    const { mode } = useDarkContext()
 
     const projects = [
-        { name: 'Text.dev', tagLine: 'Generate Secure Passwords & More', link: 'https://oindil.github.io/textog/', image: textDev},
-        { name: 'WeatherPoint', tagLine: 'Accurate Weather & Notes', link: '/og-portfolio/weather', image: weather},
-        { name: 'Yt Crawler', tagLine: 'YouTube Channel info & Video data', link: '/og-portfolio/ytcrawler', image: ytcrawler}
+        { name: 'Text.dev', tagLine: 'Generate Secure Passwords & More', link: 'https://oindil.github.io/textog/', image: textDev },
+        { name: 'WeatherPoint', tagLine: 'Accurate Weather & Notes', link: '/og-portfolio/weather', image: weather },
+        { name: 'Yt Crawler', tagLine: 'YouTube Channel info & Video data', link: '/og-portfolio/ytcrawler', image: ytcrawler }
     ]
     const socialMedia = [
         { name: 'Github', link: 'https://github.com/OINDIL' },
@@ -43,29 +44,44 @@ function Homepage() {
     ]
     return (
         <div>
-            <motion.section
-                initial={{ x: -100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1 }}
-                className="p-12 font-inter flex flex-col gap-5">
-                <div className="home-headings font-bold flex flex-col gap-5" ref={container}>
-                    <p id='title-1' className='sm:text-2xl text-xl'>Hello! I'm Oindil.</p>
-                    <p id='title-2' className='sm:text-7xl text-5xl'>Creating beautiful <span className="text-gray-400">&</span><br /> functional websites <br /> from <span className="text-gray-400">scratch.</span></p>
+            <section
+                className={`p-12 font-inter flex flex-col gap-5 ${mode ? `bg-black` : null}`}>
+                <div className="home-headings font-bold flex flex-col gap-5" >
+                    <motion.p
+
+                        initial={{ x: -80, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        id='title-1' className={`sm:text-2xl text-xl ${mode ? `text-white` : null}`}>Hello! I'm Oindil.</motion.p>
+                    <motion.p
+
+                        initial={{ x: -80, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        id='title-2' className={`sm:text-7xl text-5xl ${mode ? `text-white` : null}`}>Creating beautiful <span className="text-gray-400">&</span><br /> functional websites <br /> from <span className="text-gray-400">scratch.</span></motion.p>
                 </div>
 
-                <p id='title-3' className='sm:text-2xl text-xl text-gray-600'>I'll assist you in crafting contemporary, fully functional websites.</p>
+                <motion.p
+                    initial={{ x: -80, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    id='title-3' className={`sm:text-2xl text-xl ${mode ? `text-gray-400` : `text-gray-600`} `}>I'll assist you in crafting contemporary, fully functional websites.</motion.p>
                 <LetsTalk hover={false} />
-            </motion.section>
+            </section>
             {/* PROJECTS */}
             <section className="projects-container p-12" id='projects'>
-                <motion.div
-                    initial={{ x: -100, opacity: 0 }}
+                <div
+                    initial={{ x: -80, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
                     className="font-inter flex items-center justify-between mb-6">
-                    <p className='sm:text-2xl text-xl font-bold'>Selected Works</p>
+                    <motion.p
+                        initial={{ x: -80, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        className='sm:text-2xl text-xl font-bold'>Selected Works</motion.p>
                     <ViewAllWorks hover={true} />
-                </motion.div>
+                </div>
                 <div className='flex flex-col justify-center items-center'>
                     {projects.map((items, index) => (
                         <div key={index}>
@@ -75,48 +91,76 @@ function Homepage() {
                 </div>
             </section>
             {/* ABOUT PAGE */}
-            <motion.section
+            <section
                 id='about'
-                initial={{ x: -100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1 }}
                 className="p-12 font-inter flex flex-col gap-5">
                 <div className="home-headings font-bold flex flex-col gap-5">
-                    <p className='sm:text-7xl text-5xl'>A visual designer focused<br /> on creating emotional<br /> digital <span className="text-gray-400">experience.</span></p>
+                    <motion.p
+                        initial={{ x: -80, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        className='sm:text-7xl text-5xl'>A visual designer focused<br /> on creating emotional<br /> digital <span className="text-gray-400">experience.</span></motion.p>
                 </div>
 
-                <p className='sm:text-2xl text-xl text-gray-600'>Empower your digital vision with a comprehensive tech stack that blends creativity and functionality seamlessly. From dynamic <span className='font-medium'>React</span> interfaces to robust <span className='font-medium'>Node.js</span> backends and efficient database management with <span className='font-medium'>MongoDB</span> and <span className='font-medium'>MySQL</span>,<br /> I craft tailored solutions that drive innovation and exceed expectations. Let's build your next digital masterpiece <br />together.</p>
+                <motion.p
+
+                    initial={{ x: -80, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className='sm:text-2xl text-xl text-gray-600'>Empower your digital vision with a comprehensive tech stack that blends creativity and functionality seamlessly. From dynamic <span className='font-medium'>React</span> interfaces to robust <span className='font-medium'>Node.js</span> backends and efficient database management with <span className='font-medium'>MongoDB</span> and <span className='font-medium'>MySQL</span>,<br /> I craft tailored solutions that drive innovation and exceed expectations. Let's build your next digital masterpiece <br />together.</motion.p>
                 <Marquee gradient={true} gradientColor='white' gradientWidth={10}>
                     <TechStack obj={obj} />
                 </Marquee>
                 <LetsTalk hover={true} />
-            </motion.section>
+            </section>
             {/* BEFORE FOOTER */}
-            <motion.section
-                initial={{ x: -100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1 }}
+            <section
                 className="p-12 font-inter flex flex-col gap-10 text-center">
-                <p className='sm:text-2xl text-xl font-medium'>Have an idea?</p>
-                <p className='sm:text-7xl text-5xl font-bold'>Let's go <span className="text-gray-400">create</span></p>
-                <nav className='flex justify-center gap-8 font-medium underline'>
-                    <a href='#about' className='hover:text-black text-gray-400 transition ease-linear duration-300'>ABOUT ME</a>
-                    <a href='#projects' className='hover:text-black text-gray-400 transition ease-linear duration-300'>WORKS</a>
-                    <a href='#contact' className='hover:text-black text-gray-400 transition ease-linear duration-300'>CONTACTS</a>
-                </nav>
-            </motion.section>
-            {/* FOOTER */}
-            <footer id='contact' className='p-12 font-inter bg-[#030712]'>
-                <motion.div
-                    initial={{ x: -100, opacity: 0 }}
+                <motion.p
+                    initial={{ x: -80, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
+                    className='sm:text-2xl text-xl font-medium'>Have an idea?</motion.p>
+                <motion.p
+                    initial={{ x: -80, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className='sm:text-7xl text-5xl font-bold'>Let's go <span className="text-gray-400">create</span></motion.p>
+                <nav className='flex justify-center gap-8 font-medium underline'>
+                    <motion.a
+                        initial={{ x: -80, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        href='#about' className='hover:text-black text-gray-400 transition ease-linear duration-300'>ABOUT ME</motion.a>
+                    <motion.a
+                        initial={{ x: -80, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        href='#projects' className='hover:text-black text-gray-400 transition ease-linear duration-300'>WORKS</motion.a>
+                    <motion.a
+                        initial={{ x: -80, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        href='#contact' className='hover:text-black text-gray-400 transition ease-linear duration-300'>CONTACTS</motion.a>
+                </nav>
+            </section>
+            {/* FOOTER */}
+            <footer id='contact' className='p-12 font-inter bg-[#030712]'>
+                <div
                     className='flex flex-col gap-10'>
                     <div>
-                        <h1 className='font-bold text-2xl'>
+                        <motion.h1
+                            initial={{ x: -80, opacity: 0 }}
+                            whileInView={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 1 }}
+                            className='font-bold text-2xl'>
                             <span className='text-gray-400'>Oindil</span><span className='text-white'>Golder.</span>
-                        </h1>
-                        <p className='sm:text-2xl text-xl text-white'>I'll assist you in crafting contemporary, fully functional websites.</p>
+                        </motion.h1>
+                        <motion.p
+                            initial={{ x: -80, opacity: 0 }}
+                            whileInView={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 1 }}
+                            className='sm:text-2xl text-xl text-white'>I'll assist you in crafting contemporary, fully functional websites.</motion.p>
                     </div>
                     <div className="flex gap-4 justify-between flex-wrap">
                         {socialMedia.map((items, index) => (
@@ -126,11 +170,19 @@ function Homepage() {
                         ))}
                     </div>
                     <div>
-                        <p className='text-2xl text-gray-400 font-bold'>Stay Connected W/ Me</p>
+                        <motion.p
+                            initial={{ x: -80, opacity: 0 }}
+                            whileInView={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 1 }}
+                            className='text-2xl text-gray-400 font-bold'>Stay Connected W/ Me</motion.p>
                         <ContactForm />
                     </div>
-                    <p className='text-gray-400 text-center'>&copy;2024 All Rigts Reserved.<br />Designed with &#129293; by Oindil.</p>
-                </motion.div>
+                    <motion.p
+                        initial={{ x: -80, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        className='text-gray-400 text-center'>&copy;2024 All Rigts Reserved.<br />Designed with &#129293; by Oindil.</motion.p>
+                </div>
             </footer>
         </div>
     )
