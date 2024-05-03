@@ -7,7 +7,13 @@ import ytThumbnail from '../../Images/YtCrawlerThumbnail.png'
 import ytcrawler from '../../Images/ytcrawler.png'
 import TechStack from '../TechStack'
 
-function YtCrawlerDesc({ hover }) {
+import { useDarkContext } from '../../Contexts/DarkModeContext'
+
+function YtCrawlerDesc() {
+    // Context
+    const { mode } = useDarkContext()
+
+
     const obj = [
         <i className="fa-brands fa-react"></i>,
         <i className="fa-brands fa-js"></i>,
@@ -20,26 +26,27 @@ function YtCrawlerDesc({ hover }) {
     ]
     return (
         <div>
-            <motion.div
-                initial={{ x: 100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1 }}
-                className="p-12 font-inter flex flex-col gap-5">
+            <div
+                className={`p-12 font-inter flex flex-col gap-5 ${mode ? `bg-black text-white` : null}`}>
                 <Link to='/og-portfolio'>
-                    <i className="fa-solid fa-arrow-left text-gray-400 hover:text-black transition ease-linear duration-100 "></i>
+                    <motion.i className={`fa-solid fa-arrow-left text-gray-400  transition ease-linear duration-100 ${mode ? `hover:text-white` : `hover:text-black`}`}
+                        initial={{ x: 50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                    ></motion.i>
                 </Link>
                 <div className="font-bold flex flex-col gap-5">
                     <p className='sm:text-7xl text-5xl'>Welcome to the case study of <span className='text-gray-400'>YTCrawler.</span></p>
                 </div>
 
-                <p className='sm:text-2xl text-xl text-gray-600'>Revolutionizing YouTube Channel Discovery.</p>
+                <p className={`sm:text-2xl text-xl ${mode ? `text-gray-400` : `text-gray-600`}`}>Revolutionizing YouTube Channel Discovery.</p>
                 <div className="flex sm:flex-row flex-col gap-5">
                     <img className='rounded-xl border' src={ytThumbnail} alt="something" height={270} width={200} />
                     <div className="flex flex-col sm:w-1/2 w-auto gap-1">
                         <p className='font-bold text-xl'>YTcrawler</p>
-                        <p className='font-medium text-gray-600'>theOGdev.</p>
-                        <p className='text-sm'><span className="font-bold">Description:</span> <span className='text-gray-600'>YTCrawler is a visionary online platform developed to redefine the way users discover and explore YouTube channels. Inspired by the need for a more personalized and efficient channel discovery experience, YTCrawler leverages innovative technologies to provide tailored recommendations and insights for both viewers and content creators.</span><br />**This app is still in developement**</p>
-                        <Marquee gradient={true} gradientWidth={20}>
+                        <p className={`font-medium ${mode ? `text-gray-400` : `text-gray-600`}`}>theOGdev.</p>
+                        <p className='text-sm'><span className="font-bold">Description:</span> <span className={`${mode ? `text-gray-400` : `text-gray-600`}`}>YTCrawler is a visionary online platform developed to redefine the way users discover and explore YouTube channels. Inspired by the need for a more personalized and efficient channel discovery experience, YTCrawler leverages innovative technologies to provide tailored recommendations and insights for both viewers and content creators.</span><br />**This app is still in developement**</p>
+                        <Marquee gradient={true} gradientWidth={20} gradientColor={ mode ? 'black' : 'white'}>
                             <TechStack obj={obj} />
                         </Marquee>
                         <motion.button
@@ -56,15 +63,15 @@ function YtCrawlerDesc({ hover }) {
                     <p className='sm:text-7xl text-5xl font-bold'>Case <span className="text-gray-400">study</span></p>
                     <article>
                         <p className='sm:text-4xl text-3xl font-medium'>Introduction</p>
-                        <p className=' text-gray-600'>In the digital age of content consumption, navigating the vast landscape of YouTube channels can be overwhelming. Enter YTCrawler, an innovative platform designed to revolutionize the way users explore and engage with YouTube content. YTCrawler is more than just a channel discovery tool; it's a personalized gateway to a world of captivating videos and diverse creators.</p>
+                        <p className={`${mode ? `text-gray-400` : `text-gray-600`}`}>In the digital age of content consumption, navigating the vast landscape of YouTube channels can be overwhelming. Enter YTCrawler, an innovative platform designed to revolutionize the way users explore and engage with YouTube content. YTCrawler is more than just a channel discovery tool; it's a personalized gateway to a world of captivating videos and diverse creators.</p>
                     </article>
                     <article>
                         <p className='sm:text-4xl text-3xl font-medium'>Objective</p>
-                        <p className=' text-gray-600'>The primary goal of YTCrawler is to offer a comprehensive solution that enhances channel discovery, fosters community engagement, and empowers content creators to reach their target audiences effectively. By leveraging advanced algorithms and user-centric design principles, YTCrawler aims to become the go-to platform for discovering diverse and compelling YouTube content.</p>
+                        <p className={`${mode ? `text-gray-400` : `text-gray-600`}`}>The primary goal of YTCrawler is to offer a comprehensive solution that enhances channel discovery, fosters community engagement, and empowers content creators to reach their target audiences effectively. By leveraging advanced algorithms and user-centric design principles, YTCrawler aims to become the go-to platform for discovering diverse and compelling YouTube content.</p>
                     </article>
                     <article>
                         <p className='sm:text-4xl text-3xl font-medium'>Key features</p>
-                        <ul className='text-gray-600'>
+                        <ul className={`${mode ? `text-gray-400` : `text-gray-600`}`}>
                             <li>
                                 <p><span className='font-bold'>Personalized Recommendations:</span> YTCrawler utilizes machine learning algorithms to analyze user preferences, viewing history, and engagement patterns to deliver personalized channel recommendations. This ensures that users discover content aligned with their interests and tastes.</p>
                             </li>
@@ -76,7 +83,7 @@ function YtCrawlerDesc({ hover }) {
                             </li>
                             <li>
                                 <p><span className='font-bold'>User-friendly Interface:</span> YTCrawler features an intuitive and visually appealing interface designed for seamless navigation and effortless discovery. The interface prioritizes usability and accessibility, catering to users of all backgrounds and preferences.
-</p>
+                                </p>
                             </li>
                             <li>
                                 <p><span className='font-bold'>Cross-device Compatibility:</span> YTCrawler is accessible across various devices, including desktops, laptops, tablets, and smartphones. The platform ensures a consistent user experience regardless of the device used, enabling users to discover channels on the go.</p>
@@ -85,14 +92,14 @@ function YtCrawlerDesc({ hover }) {
                     </article>
                     <article>
                         <p className='sm:text-4xl text-3xl font-medium'>Future roadmap</p>
-                        <p className=' text-gray-600'>Looking ahead, YTCrawler plans to expand its feature set by incorporating social sharing functionalities, collaborative playlists, and enhanced content curation tools. The platform aims to establish partnerships with YouTube influencers and brands to further amplify channel discovery and audience engagement.</p>
+                        <p className={`${mode ? `text-gray-400` : `text-gray-600`}`}>Looking ahead, YTCrawler plans to expand its feature set by incorporating social sharing functionalities, collaborative playlists, and enhanced content curation tools. The platform aims to establish partnerships with YouTube influencers and brands to further amplify channel discovery and audience engagement.</p>
                     </article>
                     <article>
                         <p className='sm:text-4xl text-3xl font-medium'>Conclusions</p>
-                        <p className=' text-gray-600'>YTCrawler represents a pioneering solution in the realm of YouTube channel discovery, leveraging technology to empower users and content creators alike. With its innovative features and user-centric approach, YTCrawler is poised to shape the future of online content exploration and community engagement.</p>
+                        <p className={`${mode ? `text-gray-400` : `text-gray-600`}`}>YTCrawler represents a pioneering solution in the realm of YouTube channel discovery, leveraging technology to empower users and content creators alike. With its innovative features and user-centric approach, YTCrawler is poised to shape the future of online content exploration and community engagement.</p>
                     </article>
                 </div>
-            </motion.div>
+            </div>
         </div>
     )
 }
