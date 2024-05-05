@@ -18,17 +18,20 @@ function Navbar() {
                     <span className='text-gray-400'>Oindil</span>Golder.
                 </motion.h1>
                 <div className='flex items-center gap-5'>
-                    <motion.button
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.9 }}
+                    <motion.span
                         initial={{ x: -80, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
-                        onClick={() => setMode(!mode)}
                     >
-                        {mode ? <i className="fa-solid fa-sun"></i> : <i className="fa-solid fa-moon"></i>}
+                        <motion.button
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={() => setMode(!mode)}
+                        >
+                            {mode ? <i className="fa-solid fa-sun"></i> : <i className="fa-solid fa-moon"></i>}
 
-                    </motion.button>
+                        </motion.button>
+                    </motion.span>
                     <LetsTalk hover={true} />
                 </div>
             </nav>
