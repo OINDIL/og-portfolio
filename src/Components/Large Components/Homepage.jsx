@@ -69,7 +69,7 @@ function Homepage() {
                 <LetsTalk hover={false} />
             </section>
             {/* PROJECTS */}
-            <section className={`projects-container p-12 transition ease-linear duration-300 ${mode ? `bg-black text-white` : null}`}>
+            <section id='projects' className={`projects-container p-12 transition ease-linear duration-300 ${mode ? `bg-black text-white` : null}`}>
                 <div
                     className="font-inter flex items-center justify-between mb-6">
                     <motion.p

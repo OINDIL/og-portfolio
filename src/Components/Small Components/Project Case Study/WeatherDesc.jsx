@@ -54,7 +54,7 @@ function WeatherDesc({ hover }) {
                         <motion.button
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            className={`sm:w-32 w-auto font-medium flex justify-center gap-2 border py-2 px-3 rounded-3xl ${mode ? `border-white bg-white text-black` : `border-black`} ${hover ? `hover:bg-black hover:text-white` : `bg-black text-white`} transition ease-linear duration-100`}><a href="https://github.com/OINDIL/WeatherOfficial" className='flex' target='_blank'>
+                            className={`sm:w-32 w-auto font-medium flex justify-center gap-2 border py-2 px-3 rounded-3xl ${mode ? `border-white bg-white` : `border-black`} ${hover ? `hover:bg-black hover:text-white` : `bg-black text-white`} transition ease-linear duration-100`}><a href="https://github.com/OINDIL/WeatherOfficial" className={`flex ${ mode && `text-black`}`} target='_blank'>
                                 GitHub
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
