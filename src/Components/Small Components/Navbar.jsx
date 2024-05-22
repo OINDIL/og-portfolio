@@ -14,6 +14,7 @@ function Navbar() {
                     initial={{ x: -80, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
+                    viewport={{ once: true }}
                     className='font-bold text-xl'>
                     <span className='text-gray-400'>Oindil</span>Golder.
                 </motion.h1>
@@ -22,6 +23,7 @@ function Navbar() {
                         initial={{ x: -80, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
+                        viewport={{ once: true }}
                     >
                         <motion.button
                             whileHover={{ scale: 1.2 }}

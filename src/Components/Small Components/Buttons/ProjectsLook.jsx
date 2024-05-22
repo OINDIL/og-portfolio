@@ -12,6 +12,7 @@ function ProjectLook({ hover, link }) {
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
+                viewport={{ once: true }}
             >
                 <motion.button
                     whileHover={{ scale: 1.1 }}

@@ -33,6 +33,7 @@ function YtCrawlerDesc() {
                         initial={{ x: 50, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
+                        viewport={{ once: true }}
                     ></motion.i>
                 </Link>
                 <div className="font-bold flex flex-col gap-5">
