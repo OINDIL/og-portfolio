@@ -27,7 +27,7 @@ function YtCrawlerDesc() {
     return (
         <div>
             <div
-                className={`p-12 font-inter flex flex-col gap-5 ${mode ? `bg-black text-white` : null}`}>
+                className={`p-12 font-inter flex flex-col gap-5 ${mode ? `bg-black text-white` : null} max-w-6xl mx-auto`}>
                 <Link to='/og-portfolio'>
                     <motion.i className={`fa-solid fa-arrow-left text-gray-400  transition ease-linear duration-100 ${mode ? `hover:text-white` : `hover:text-black`}`}
                         initial={{ x: 50, opacity: 0 }}

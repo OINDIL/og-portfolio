@@ -9,7 +9,7 @@ function Navbar() {
     return (
         <div>
             <nav
-                className={`font-inter py-5 px-12 flex items-center justify-between transition ease-linear duration-300 ${mode ? `bg-black text-white` : null}`}>
+                className={`font-inter py-5 px-12 flex items-center justify-between transition ease-linear duration-300 ${mode ? `bg-black text-white` : null} max-w-7xl mx-auto`}>
                 <motion.h1
                     initial={{ x: -80, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}

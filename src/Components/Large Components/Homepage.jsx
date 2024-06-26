@@ -6,7 +6,7 @@ import Marquee from 'react-fast-marquee'
 import { motion } from 'framer-motion'
 
 import ytcrawler from '../Images/ytcrawler.png'
-import weather from '../Images/weather.png'
+import weather from '../Images/Weather.png'
 import textDev from '../Images/text_dev.png'
 
 import SocialMedia from '../Small Components/Buttons/SocialMedia'
@@ -45,7 +45,7 @@ function Homepage() {
     return (
         <div>
             <section
-                className={`p-12 font-inter flex flex-col gap-5 transition ease-linear duration-300 ${mode ? `bg-black text-white` : null}`}>
+                className={`p-12 font-inter flex flex-col gap-5 transition ease-linear duration-300 ${mode ? `bg-black text-white` : null} max-w-6xl mx-auto`}>
                 <div className="home-headings font-bold flex flex-col gap-5" >
                     <motion.p
 
@@ -72,7 +72,7 @@ function Homepage() {
                 <LetsTalk hover={false} />
             </section>
             {/* PROJECTS */}
-            <section id='projects' className={`projects-container p-12 transition ease-linear duration-300 ${mode ? `bg-black text-white` : null}`}>
+            <section id='projects' className={`projects-container p-12 transition ease-linear duration-300 ${mode ? `bg-black text-white` : null} max-w-6xl mx-auto`}>
                 <div
                     className="font-inter flex items-center justify-between mb-6">
                     <motion.p
@@ -94,7 +94,7 @@ function Homepage() {
             {/* ABOUT PAGE */}
             <section
                 id='about'
-                className={`p-12 font-inter flex flex-col gap-5 ${mode ? `bg-black text-white` : null}`}>
+                className={`p-12 font-inter flex flex-col gap-5 ${mode ? `bg-black text-white` : null} max-w-6xl mx-auto`}>
                 <div className="home-headings font-bold flex flex-col gap-5">
                     <motion.p
                         initial={{ x: -80, opacity: 0 }}
@@ -117,7 +117,7 @@ function Homepage() {
             </section>
             {/* BEFORE FOOTER */}
             <section
-                className={`p-12 font-inter flex flex-col gap-10 text-center ${mode ? `bg-black text-white` : null}`}>
+                className={`p-12 font-inter flex flex-col gap-10 text-center ${mode ? `bg-black text-white` : null} max-w-6xl mx-auto`}>
                 <motion.p
                     initial={{ x: -80, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -154,7 +154,7 @@ function Homepage() {
             {/* FOOTER */}
             <footer id='contact' className='p-12 font-inter bg-[#030712]'>
                 <div
-                    className='flex flex-col gap-10'>
+                    className='flex flex-col gap-10 max-w-6xl mx-auto'>
                     <div>
                         <motion.h1
                             initial={{ x: -80, opacity: 0 }}
@@ -171,7 +171,7 @@ function Homepage() {
                             viewport={{ once: true }}
                             className='sm:text-2xl text-xl text-white'>I'll assist you in crafting contemporary, fully functional websites.</motion.p>
                     </div>
-                    <div className="flex gap-4 justify-between flex-wrap">
+                    <div className="grid sm:grid-cols-4 grid-cols-2 gap-4">
                         {socialMedia.map((items, index) => (
                             <div key={index}>
                                 <SocialMedia items={items} hover={true} />
