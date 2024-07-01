@@ -43,9 +43,9 @@ function Homepage() {
         <i className="fa-brands fa-php"></i>
     ]
     return (
-        <div>
+        <div className={`${mode ? `bg-black text-white` : null}`}>
             <section
-                className={`p-12 font-inter flex flex-col gap-5 transition ease-linear duration-300 ${mode ? `bg-black text-white` : null} max-w-6xl mx-auto`}>
+                className={`p-12 font-inter flex flex-col gap-5 transition ease-linear duration-300 max-w-6xl mx-auto`}>
                 <div className="home-headings font-bold flex flex-col gap-5" >
                     <motion.p
 
@@ -72,7 +72,7 @@ function Homepage() {
                 <LetsTalk hover={false} />
             </section>
             {/* PROJECTS */}
-            <section id='projects' className={`projects-container p-12 transition ease-linear duration-300 ${mode ? `bg-black text-white` : null} max-w-6xl mx-auto`}>
+            <section id='projects' className={`projects-container p-12 transition ease-linear duration-300 max-w-6xl mx-auto`}>
                 <div
                     className="font-inter flex items-center justify-between mb-6">
                     <motion.p
@@ -94,7 +94,7 @@ function Homepage() {
             {/* ABOUT PAGE */}
             <section
                 id='about'
-                className={`p-12 font-inter flex flex-col gap-5 ${mode ? `bg-black text-white` : null} max-w-6xl mx-auto`}>
+                className={`p-12 font-inter flex flex-col gap-5 max-w-6xl mx-auto`}>
                 <div className="home-headings font-bold flex flex-col gap-5">
                     <motion.p
                         initial={{ x: -80, opacity: 0 }}
@@ -117,7 +117,7 @@ function Homepage() {
             </section>
             {/* BEFORE FOOTER */}
             <section
-                className={`p-12 font-inter flex flex-col gap-10 text-center ${mode ? `bg-black text-white` : null} max-w-6xl mx-auto`}>
+                className={`p-12 font-inter flex flex-col gap-10 text-center max-w-6xl mx-auto`}>
                 <motion.p
                     initial={{ x: -80, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
