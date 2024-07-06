@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import ytcrawler from '../Images/ytcrawler.png'
 import weather from '../Images/Weather.png'
 import textDev from '../Images/text_dev.png'
+import farmneed from '../Images/Farmneed.png'
 
 import SocialMedia from '../Small Components/Buttons/SocialMedia'
 import ContactForm from '../Small Components/ContactForm'
@@ -19,9 +20,10 @@ function Homepage() {
     const { mode } = useDarkContext()
 
     const projects = [
-        { name: 'Text.dev', tagLine: 'Generate Secure Passwords & More', link: 'https://oindil.github.io/textog/', image: textDev },
-        { name: 'WeatherPoint', tagLine: 'Accurate Weather & Notes', link: '/og-portfolio/weather', image: weather },
-        { name: 'Yt Crawler', tagLine: 'YouTube Channel info & Video data', link: '/og-portfolio/ytcrawler', image: ytcrawler }
+        { name: 'Farmneed', tagLine: 'Developed products and about page. (Freelance)', link:'https://farmneed.com/products', image: farmneed},
+        { name: 'ytcrawler.com', tagLine: 'YouTube analytics at fingertips. (Getting Prod. Ready)', link: '/og-portfolio/ytcrawler', image: ytcrawler },
+        { name: 'Text.dev', tagLine: 'Generate Secure Passwords & More (GitHub)', link: 'https://oindil.github.io/textog/', image: textDev },
+        { name: 'WeatherPoint', tagLine: 'Accurate Weather & Notes (GitHub)', link: '/og-portfolio/weather', image: weather },
     ]
     const socialMedia = [
         { name: 'Github', link: 'https://github.com/OINDIL' },
