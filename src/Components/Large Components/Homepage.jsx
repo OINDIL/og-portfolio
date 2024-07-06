@@ -49,13 +49,13 @@ function Homepage() {
             <section
                 className={`p-12 font-inter flex flex-col gap-5 transition ease-linear duration-300 max-w-6xl mx-auto`}>
                 <div className="home-headings font-bold flex flex-col gap-5" >
-                    <motion.p
+                    <motion.h1
 
                         initial={{ x: -80, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
                         viewport={{ once: true }}
-                        id='title-1' className={`sm:text-2xl text-xl`}>Hello! I'm Oindil.</motion.p>
+                        id='title-1' className={`sm:text-2xl text-xl`}>Hello! I'm Oindil.</motion.h1>
                     <motion.p
 
                         initial={{ x: -80, opacity: 0 }}
@@ -111,7 +111,7 @@ function Homepage() {
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
                     viewport={{ once: true }}
-                    className={`sm:text-2xl text-xl ${mode ? `text-gray-400` : `text-gray-600`}`}>Empower your digital vision with a comprehensive tech stack that blends creativity and functionality seamlessly. From dynamic <span className='font-medium'>React</span> interfaces to robust <span className='font-medium'>Node.js</span> backends and efficient database management with <span className='font-medium'>MongoDB</span> and <span className='font-medium'>MySQL</span>,<br /> I craft tailored solutions that drive innovation and exceed expectations. Let's build your next digital masterpiece <br />together.</motion.p>
+                    className={`sm:text-2xl text-xl ${mode ? `text-gray-400` : `text-gray-600`} max-w-4xl`}>Empower your digital vision with a comprehensive tech stack that blends creativity and functionality seamlessly. From dynamic <span className='font-medium hover:text-[#61DBFB] transition ease-linear duration-75'>React</span> interfaces to robust <span className='font-medium hover:text-[#68A063] transition ease-linear duration-75'>Node.js</span> backends and efficient database management with <span className='font-medium hover:text-[#4DB33D] transition ease-linear duration-75'>MongoDB</span> and <span className='font-medium hover:text-[#F29111] transition ease-linear duration-75'>MySQL</span>, I craft tailored solutions that drive innovation and exceed expectations. Let's build your next digital masterpiece together.</motion.p>
                 <Marquee gradient={true} gradientColor={mode ? 'black' : 'white'} gradientWidth={10}>
                     <TechStack obj={obj} />
                 </Marquee>
@@ -158,14 +158,14 @@ function Homepage() {
                 <div
                     className='flex flex-col gap-10 max-w-6xl mx-auto'>
                     <div>
-                        <motion.h1
+                        <motion.h2
                             initial={{ x: -80, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
                             transition={{ duration: 1 }}
                             viewport={{ once: true }}
                             className='font-bold text-2xl'>
                             <span className='text-gray-400'>Oindil</span><span className='text-white'>Golder.</span>
-                        </motion.h1>
+                        </motion.h2>
                         <motion.p
                             initial={{ x: -80, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}

@@ -11,7 +11,7 @@ function Navbar() {
       <nav
         className={`font-inter py-5 px-12 flex items-center justify-between transition ease-linear duration-300 max-w-7xl mx-auto`}
       >
-        <motion.h1
+        <motion.h2
           initial={{ x: -80, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
@@ -19,7 +19,7 @@ function Navbar() {
           className="font-bold text-xl"
         >
           <span className="text-gray-400">Oindil</span>Golder.
-        </motion.h1>
+        </motion.h2>
         <div className="flex items-center gap-5">
           <motion.span
             initial={{ x: -80, opacity: 0 }}
