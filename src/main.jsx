@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import './index.css'
 
 import Navbar from "./Components/Small Components/Navbar";
 import Homepage from "./Components/Large Components/Homepage";
