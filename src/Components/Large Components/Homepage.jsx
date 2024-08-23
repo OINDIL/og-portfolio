@@ -76,29 +76,48 @@ function Homepage() {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-        <div className="home-headings font-bold flex flex-col gap-5">
+        <div className="home-headings flex flex-col gap-5">
           <motion.p
             initial={{ x: -80, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
             id="title-1"
-            className={`sm:text-2xl text-xl`}
+            className={`sm:text-2xl text-xl font-inter ${mode ? `text-gray-400` : `text-gray-600`}`}
           >
             Hello! I'm Oindil.
           </motion.p>
-          <motion.p
-            initial={{ x: -80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            id="title-2"
-            className={`sm:text-7xl text-5xl`}
-          >
-            Creating <span className="bg-gradient-to-l from-blue-900 to-black text-transparent bg-clip-text">artistic</span> <span className="text-gray-400"><img src="https://placehold.co/200x200" alt="" width={70} height={70} className="inline rounded-full"/></span>
-            <br /> functional websites <br /> from{" "}
-            <span className="text-gray-400">scratch.</span>
-          </motion.p>
+
+          <div className="max-w-full md:max-w-3xl">
+            <motion.h1
+              initial={{ x: -80, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              id="title-2"
+              className={`sm:text-7xl text-5xl tracking-tight antialiased font-bold`}
+            >
+              Full Stack Web Dev,{" "}
+              <span
+                className={` ${
+                  mode ? `bg-gradient-to-r from-blue-900 to-blue-300` : `bg-gradient-to-l from-blue-900 to-black`
+                } text-transparent bg-clip-text`}
+              >
+                Learner,
+              </span>{" "}
+              <span className="text-gray-400 hidden sm:inline">
+                <img
+                  src="https://placehold.co/200x200"
+                  alt=""
+                  width={70}
+                  height={70}
+                  className="inline rounded-full mb-2"
+                />
+              </span>{" "}
+              Bike Enthusiast,{" "}
+              <span className="text-gray-400">Freelancer.</span>
+            </motion.h1>
+          </div>
         </div>
 
         <motion.p
@@ -113,7 +132,20 @@ function Homepage() {
         >
           I'll assist you in crafting contemporary, fully functional websites.
         </motion.p>
-        <LetsTalk hover={false} />
+
+        <motion.div
+          initial={{ x: -80, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="flex flex-col sm:flex-row gap-2"
+        >
+          <span className="antialiased inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow">
+            <div className="w-[10px] h-[10px] bg-green-400 rounded-full"></div>
+            Open to work
+          </span>
+          <LetsTalk hover={false}/>
+        </motion.div>
       </motion.section>
       {/* PROJECTS */}
       <section
@@ -252,7 +284,7 @@ function Homepage() {
       <footer id="contact" className="p-12 font-inter bg-[#030712]">
         <div className="flex flex-col gap-10 max-w-6xl mx-auto">
           <div>
-            <motion.h1
+            <motion.h2
               initial={{ x: -80, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 1 }}
@@ -261,7 +293,7 @@ function Homepage() {
             >
               <span className="text-gray-400">Oindil</span>
               <span className="text-white">Golder.</span>
-            </motion.h1>
+            </motion.h2>
             <motion.p
               initial={{ x: -80, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
