@@ -21,7 +21,7 @@ function ViewAllWorks({ hover }) {
           } transition ease-linear duration-100`}
         >
           <a href="https://github.com/OINDIL" target="_blank">
-            Visit GitHub <i class="fa-brands fa-github"></i>
+            Visit GitHub <i className="fa-brands fa-github"></i>
           </a>
         </motion.button>
       </motion.div>

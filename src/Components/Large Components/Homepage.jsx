@@ -9,6 +9,7 @@ import ytcrawler from "../Images/ytcrawler.png";
 import weather from "../Images/Weather.png";
 import textDev from "../Images/text_dev.png";
 import farmneed from "../Images/Farmneed.png";
+import MyImage from "../Images/My-image.jpeg";
 
 import SocialMedia from "../Small Components/Buttons/SocialMedia";
 import ContactForm from "../Small Components/ContactForm";
@@ -16,6 +17,7 @@ import TechStack from "../Small Components/TechStack";
 
 import { useDarkContext } from "../Contexts/DarkModeContext";
 import ExperienceComponent from "../Small Components/ExperienceComponent";
+import { experience } from "../../Assets/data";
 function Homepage() {
   // CONTEXT
   const { mode } = useDarkContext();
@@ -112,7 +114,7 @@ function Homepage() {
               </span>{" "}
               <span className="text-gray-400 hidden sm:inline">
                 <img
-                  src="https://placehold.co/200x200"
+                  src={MyImage}
                   alt=""
                   width={70}
                   height={70}
@@ -186,10 +188,22 @@ function Homepage() {
         </div>
       </section>
       {/* Experience Component */}
-      <section className="max-w-6xl mx-auto p-12 font-inter">
+      <motion.section
+        initial={{ x: -80, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto p-12 font-inter"
+      >
         <h2 className="sm:text-2xl text-xl font-bold">My experiences</h2>
-        <ExperienceComponent />
-      </section>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+          {experience.map((experience, index) => (
+            <div key={index}>
+              <ExperienceComponent experience={experience} />
+            </div>
+          ))}
+        </div>
+      </motion.section>
       {/* ABOUT PAGE */}
       <section
         id="about"
