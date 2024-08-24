@@ -15,6 +15,7 @@ import ContactForm from "../Small Components/ContactForm";
 import TechStack from "../Small Components/TechStack";
 
 import { useDarkContext } from "../Contexts/DarkModeContext";
+import ExperienceComponent from "../Small Components/ExperienceComponent";
 function Homepage() {
   // CONTEXT
   const { mode } = useDarkContext();
@@ -83,7 +84,9 @@ function Homepage() {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
             id="title-1"
-            className={`sm:text-2xl text-xl font-inter ${mode ? `text-gray-400` : `text-gray-600`}`}
+            className={`sm:text-2xl text-xl font-inter ${
+              mode ? `text-gray-400` : `text-gray-600`
+            }`}
           >
             Hello! I'm Oindil.
           </motion.p>
@@ -100,7 +103,9 @@ function Homepage() {
               Full Stack Web Dev,{" "}
               <span
                 className={` ${
-                  mode ? `bg-gradient-to-r from-blue-900 to-blue-300` : `bg-gradient-to-l from-blue-900 to-black`
+                  mode
+                    ? `bg-gradient-to-r from-blue-900 to-blue-300`
+                    : `bg-gradient-to-l from-blue-900 to-black`
                 } text-transparent bg-clip-text`}
               >
                 Learner,
@@ -115,7 +120,15 @@ function Homepage() {
                 />
               </span>{" "}
               Bike Enthusiast,{" "}
-              <span className="text-gray-400">Freelancer.</span>
+              <span
+                className={`${
+                  mode
+                    ? `bg-gradient-to-r from-blue-900 to-blue-300`
+                    : `bg-gradient-to-l from-blue-900 to-black`
+                } text-transparent bg-clip-text`}
+              >
+                Freelancer.
+              </span>
             </motion.h1>
           </div>
         </div>
@@ -140,11 +153,11 @@ function Homepage() {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row gap-2"
         >
-          <span className="antialiased inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow">
-            <div className="w-[10px] h-[10px] bg-green-400 rounded-full"></div>
+          <span className="font-semibold antialiased inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow">
+            <div className="w-[10px] h-[10px] bg-green-500 rounded-full"></div>
             Open to work
           </span>
-          <LetsTalk hover={false}/>
+          <LetsTalk hover={false} />
         </motion.div>
       </motion.section>
       {/* PROJECTS */}
@@ -171,6 +184,11 @@ function Homepage() {
             </div>
           ))}
         </div>
+      </section>
+      {/* Experience Component */}
+      <section className="max-w-6xl mx-auto p-12 font-inter">
+        <h2 className="sm:text-2xl text-xl font-bold">My experiences</h2>
+        <ExperienceComponent />
       </section>
       {/* ABOUT PAGE */}
       <section
