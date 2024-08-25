@@ -16,6 +16,8 @@ export const techStack = [
     { name: 'Bootstrap 5', link: 'https://getbootstrap.com' },
     { name: 'CSS', link: 'https://web.dev/learn/css' },
     { name: '+ More'},
-    
-    
+]
+export const educationBackground = [
+    { name: 'Self Study', link: '' },
+    { name: 'Brainware University', link: 'https://brainwareuniversity.ac.in' },
 ]

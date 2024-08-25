@@ -17,7 +17,7 @@ import TechStack from "../Small Components/TechStack";
 
 import { useDarkContext } from "../Contexts/DarkModeContext";
 import ExperienceComponent from "../Small Components/ExperienceComponent";
-import { experience, techStack } from "../../Assets/data";
+import { educationBackground, experience, techStack } from "../../Assets/data";
 function Homepage() {
   // CONTEXT
   const { mode } = useDarkContext();
@@ -254,15 +254,34 @@ function Homepage() {
         </div>
         <div className={`p-3 border ${mode && `border-gray-500`} rounded-lg`}>
           <div className="mb-2">
-            <p className="antialiased font-semibold">My tech stack</p>
-            <p
-              className={`font-normal ${
-                mode ? `text-gray-300` : `text-gray-600`
-              }`}
-            >
-              My tech stack includes front-end tools like React JS, Tailwind CSS
-              and backend tools like Node and its framework Express JS
-            </p>
+            {stackOption === 0 ? (
+              <div>
+                <p className="antialiased font-semibold text-xl">
+                  My tech stack
+                </p>
+                <p
+                  className={`font-normal ${
+                    mode ? `text-gray-300` : `text-gray-600`
+                  }`}
+                >
+                  My tech stack includes front-end tools like React JS, Tailwind
+                  CSS and backend tools like Node and its framework Express JS
+                </p>
+              </div>
+            ) : (
+              <div>
+                <p className="antialiased font-semibold text-xl">
+                  My education background
+                </p>
+                <p
+                  className={`font-normal ${
+                    mode ? `text-gray-300` : `text-gray-600`
+                  }`}
+                >
+                  I am a BCA undergrad, working as a full stack dev
+                </p>
+              </div>
+            )}
           </div>
           {stackOption === 0 ? (
             <div className="flex gap-2 flex-wrap">
@@ -274,7 +293,7 @@ function Homepage() {
                   title={tech.link}
                   className={`border px-3 rounded-full antialiased ${
                     mode
-                      ? `bg-white text-black hover:bg-white/95`
+                      ? `bg-white text-black hover:bg-white/95 shadow`
                       : `text-gray-700 hover:text-black`
                   }  hover:cursor-pointer`}
                 >
@@ -283,7 +302,23 @@ function Homepage() {
               ))}
             </div>
           ) : (
-            <div></div>
+            <div className="flex gap-2 flex-wrap">
+              {educationBackground.map((tech, index) => (
+                <a
+                  href={tech.link}
+                  target="_blank"
+                  key={index}
+                  title={tech.link}
+                  className={`border px-3 rounded-full antialiased ${
+                    mode
+                      ? `bg-white text-black hover:bg-white/95 shadow`
+                      : `text-gray-700 hover:text-black`
+                  }  hover:cursor-pointer`}
+                >
+                  {tech.name}
+                </a>
+              ))}
+            </div>
           )}
         </div>
         {/* <Marquee
