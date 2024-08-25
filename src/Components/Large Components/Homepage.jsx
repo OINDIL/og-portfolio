@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import LetsTalk from "../Small Components/Buttons/LetsTalk";
 import ViewAllWorks from "../Small Components/Buttons/ViewAllWorks";
 import ProjectsWorks from "../Small Components/ProjectsWorks";
@@ -17,10 +17,13 @@ import TechStack from "../Small Components/TechStack";
 
 import { useDarkContext } from "../Contexts/DarkModeContext";
 import ExperienceComponent from "../Small Components/ExperienceComponent";
-import { experience } from "../../Assets/data";
+import { experience, techStack } from "../../Assets/data";
 function Homepage() {
   // CONTEXT
   const { mode } = useDarkContext();
+
+  // States
+  const [stackOption, setStackOption] = useState(0);
 
   const projects = [
     {
@@ -209,47 +212,90 @@ function Homepage() {
         id="about"
         className={`p-12 font-inter flex flex-col gap-5 max-w-6xl mx-auto`}
       >
-        <div className="home-headings font-bold flex flex-col gap-5 text-center">
-          <motion.p
+        <div className="font-bold flex flex-col gap-5 text-center">
+          <motion.h2
             initial={{ x: -80, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
             className="sm:text-7xl text-5xl"
           >
-            A visual designer focused on creating emotional digital{" "}
-            <span className="text-gray-400">experience.</span>
-          </motion.p>
+            Let's learn{" "}
+            <span
+              className={`${
+                mode
+                  ? `bg-gradient-to-r from-blue-900 to-blue-300`
+                  : `bg-gradient-to-l from-blue-900 to-black`
+              } text-transparent bg-clip-text`}
+            >
+              something
+            </span>{" "}
+            about me
+          </motion.h2>
         </div>
 
-        <motion.p
-          initial={{ x: -80, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className={`sm:text-2xl text-xl ${
-            mode ? `text-gray-400` : `text-gray-600`
-          } text-center`}
-        >
-          Empower your digital vision with a comprehensive tech stack that
-          blends creativity and functionality seamlessly. From dynamic{" "}
-          <span className="font-medium">React</span> interfaces to robust{" "}
-          <span className="font-medium">Node.js</span> backends and efficient
-          database management with <span className="font-medium">MongoDB</span>{" "}
-          and <span className="font-medium">MySQL</span>, I craft tailored
-          solutions that drive innovation and exceed expectations. Let's build
-          your next digital masterpiece together.
-        </motion.p>
-        <Marquee
+        <div className="flex justify-center">
+          <div className="p-1 border inline-flex gap-2 rounded-full">
+            {["My tech stack", "My Education"].map((stack, index) => (
+              <span
+                key={index}
+                className={`${
+                  stackOption === index &&
+                  `${
+                    mode ? `bg-white text-black` : `text-white bg-black`
+                  } rounded-full transition ease-linear duration-300`
+                } p-2 hover:cursor-pointer`}
+                onClick={() => setStackOption(index)}
+              >
+                {stack}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className={`p-3 border ${mode && `border-gray-500`} rounded-lg`}>
+          <div className="mb-2">
+            <p className="antialiased font-semibold">My tech stack</p>
+            <p
+              className={`font-normal ${
+                mode ? `text-gray-300` : `text-gray-600`
+              }`}
+            >
+              My tech stack includes front-end tools like React JS, Tailwind CSS
+              and backend tools like Node and its framework Express JS
+            </p>
+          </div>
+          {stackOption === 0 ? (
+            <div className="flex gap-2 flex-wrap">
+              {techStack.map((tech, index) => (
+                <a
+                  href={tech.link}
+                  target="_blank"
+                  key={index}
+                  title={tech.link}
+                  className={`border px-3 rounded-full antialiased ${
+                    mode
+                      ? `bg-white text-black hover:bg-white/95`
+                      : `text-gray-700 hover:text-black`
+                  }  hover:cursor-pointer`}
+                >
+                  {tech.name}
+                </a>
+              ))}
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
+        {/* <Marquee
           gradient={true}
           gradientColor={mode ? "black" : "white"}
           gradientWidth={10}
         >
           <TechStack obj={obj} />
-        </Marquee>
-        <div className="flex justify-center">
+        </Marquee> */}
+        {/* <div className="flex justify-center">
           <LetsTalk hover={true} />
-        </div>
+        </div> */}
       </section>
       {/* BEFORE FOOTER */}
       <section
