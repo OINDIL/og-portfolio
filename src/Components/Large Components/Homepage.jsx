@@ -208,6 +208,7 @@ function Homepage() {
         </div>
       </motion.section>
       {/* ABOUT PAGE */}
+
       <section
         id="about"
         className={`p-12 font-inter flex flex-col gap-5 max-w-6xl mx-auto`}
@@ -234,7 +235,13 @@ function Homepage() {
           </motion.h2>
         </div>
 
-        <div className="flex justify-center">
+        <motion.div
+          className="flex justify-center"
+          initial={{ x: -80, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
           <div className="p-1 border inline-flex gap-2 rounded-full">
             {["My tech stack", "My Education"].map((stack, index) => (
               <span
@@ -251,8 +258,14 @@ function Homepage() {
               </span>
             ))}
           </div>
-        </div>
-        <div className={`p-3 border ${mode && `border-gray-500`} rounded-lg`}>
+        </motion.div>
+        <motion.div
+          className={`p-3 border ${mode && `border-gray-500`} rounded-lg`}
+          initial={{ x: -80, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
           <div className="mb-2">
             {stackOption === 0 ? (
               <div>
@@ -265,7 +278,7 @@ function Homepage() {
                   }`}
                 >
                   My tech stack includes front-end tools like React JS, Tailwind
-                  CSS and backend tools like Node and its framework Express JS
+                  CSS and backend tools like Node and its framework Express JS.
                 </p>
               </div>
             ) : (
@@ -278,7 +291,7 @@ function Homepage() {
                     mode ? `text-gray-300` : `text-gray-600`
                   }`}
                 >
-                  I am a BCA undergrad, working as a full stack dev
+                  I am a BCA undergrad, working as a full stack dev.
                 </p>
               </div>
             )}
@@ -320,17 +333,20 @@ function Homepage() {
               ))}
             </div>
           )}
-        </div>
-        {/* <Marquee
+        </motion.div>
+      </section>
+
+      <section>
+        <p className="text-xl font-inter antialiased text-center mb-4">10+ technologies. Just ask.</p>
+        <Marquee
           gradient={true}
           gradientColor={mode ? "black" : "white"}
           gradientWidth={10}
+          speed={25}
+          pauseOnHover={true}
         >
           <TechStack obj={obj} />
-        </Marquee> */}
-        {/* <div className="flex justify-center">
-          <LetsTalk hover={true} />
-        </div> */}
+        </Marquee>
       </section>
       {/* BEFORE FOOTER */}
       <section
@@ -352,7 +368,16 @@ function Homepage() {
           viewport={{ once: true }}
           className="sm:text-7xl text-5xl font-bold"
         >
-          Let's go <span className="text-gray-400">create</span>
+          Let's go{" "}
+          <span
+            className={`${
+              mode
+                ? `bg-gradient-to-r from-blue-900 to-blue-300`
+                : `bg-gradient-to-l from-blue-900 to-black`
+            } text-transparent bg-clip-text`}
+          >
+            create.
+          </span>
         </motion.p>
         <nav className="flex justify-center gap-8 font-medium underline">
           <motion.a
@@ -363,7 +388,7 @@ function Homepage() {
             href="#about"
             className={`hover:text-${
               mode ? `white` : `black`
-            } text-gray-400 transition ease-linear duration-300`}
+            } text-gray-400 transition ease-linear duration-100`}
           >
             ABOUT ME
           </motion.a>
@@ -375,7 +400,7 @@ function Homepage() {
             href="#projects"
             className={`hover:text-${
               mode ? `white` : `black`
-            } text-gray-400 transition ease-linear duration-300`}
+            } text-gray-400 transition ease-linear duration-100`}
           >
             WORKS
           </motion.a>
@@ -387,7 +412,7 @@ function Homepage() {
             href="#contact"
             className={`hover:text-${
               mode ? `white` : `black`
-            } text-gray-400 transition ease-linear duration-300`}
+            } text-gray-400 transition ease-linear duration-100`}
           >
             CONTACTS
           </motion.a>
