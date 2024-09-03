@@ -9,6 +9,7 @@ import ytcrawler from "../Images/ytcrawler.png";
 import weather from "../Images/Weather.png";
 import textDev from "../Images/text_dev.png";
 import farmneed from "../Images/Farmneed.png";
+import Digionestep from "../Images/Digionestep.png"
 import MyImage from "../Images/My-image.jpeg";
 
 import SocialMedia from "../Small Components/Buttons/SocialMedia";
@@ -26,6 +27,12 @@ function Homepage() {
   const [stackOption, setStackOption] = useState(0);
 
   const projects = [
+    {
+      name: "Digionestep",
+      tagLine: "Developed and improvised the website design. (Co-Founder)",
+      link: "https://digionestep.com",
+      image: Digionestep,
+    },
     {
       name: "Farmneed",
       tagLine: "Developed products and about page. (Freelance)",
