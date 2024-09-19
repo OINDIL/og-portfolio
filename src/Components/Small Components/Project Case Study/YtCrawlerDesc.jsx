@@ -84,6 +84,7 @@ function YtCrawlerDesc() {
             <Marquee
               gradient={true}
               gradientWidth={20}
+              speed={30}
               gradientColor={mode ? "black" : "white"}
             >
               <TechStack obj={obj} />

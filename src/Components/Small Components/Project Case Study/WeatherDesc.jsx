@@ -49,7 +49,7 @@ function WeatherDesc({ hover }) {
                         <p className='font-bold text-xl'>WeatherPoint</p>
                         <p className={`font-medium ${mode ? `text-gray-400` : `text-gray-600`}`}>theOGdev.</p>
                         <p className='text-sm'><span className="font-bold">Description:</span> <span className={`${mode ? `text-gray-400` : `text-gray-600`}`}>This is an extraordinary weather web app that has been given the power of managing and storing notes within itself. Users can log in and see the weather of their location and they can manage their daily notes in one place.</span><br />**This app is still in developement**</p>
-                        <Marquee gradient={true} gradientWidth={20} gradientColor={mode ? 'black' : 'white'}>
+                        <Marquee speed={30} gradient={true} gradientWidth={20} gradientColor={mode ? 'black' : 'white'}>
                             <TechStack obj={obj} />
                         </Marquee>
                         <motion.button

@@ -277,14 +277,14 @@ function Homepage() {
             {stackOption === 0 ? (
               <div>
                 <p className="antialiased font-semibold text-xl">
-                  My tech stack
+                  Tech Stack
                 </p>
                 <p
                   className={`font-normal ${
                     mode ? `text-gray-300` : `text-gray-600`
                   }`}
                 >
-                  My tech stack includes front-end tools like React JS, Tailwind
+                  It includes front-end tools like React JS, Tailwind
                   CSS and backend tools like Node and its framework Express JS.
                 </p>
               </div>

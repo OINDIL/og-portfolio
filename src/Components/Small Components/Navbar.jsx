@@ -3,11 +3,15 @@ import LetsTalk from "./Buttons/LetsTalk";
 import { motion } from "framer-motion";
 
 import { useDarkContext } from "../Contexts/DarkModeContext";
+import Header from "./Header";
 function Navbar() {
   const { mode, setMode } = useDarkContext();
 
   return (
     <div className={`${mode ? `bg-black text-white` : null}`}>
+      <div>
+        <Header/>
+      </div>
       <nav
         className={`font-inter py-5 px-12 flex items-center justify-between transition ease-linear duration-300 max-w-7xl mx-auto`}
       >
