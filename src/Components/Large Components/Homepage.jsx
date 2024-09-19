@@ -9,7 +9,7 @@ import ytcrawler from "../Images/ytcrawler.png";
 import weather from "../Images/Weather.png";
 import textDev from "../Images/text_dev.png";
 import farmneed from "../Images/Farmneed.png";
-import Digionestep from "../Images/Digionestep.png"
+import Digionestep from "../Images/Digionestep.png";
 import MyImage from "../Images/My-image.jpeg";
 
 import SocialMedia from "../Small Components/Buttons/SocialMedia";
@@ -344,7 +344,9 @@ function Homepage() {
       </section>
 
       <section>
-        <p className="text-xl font-inter antialiased text-center mb-4">10+ technologies. Just ask.</p>
+        <p className="text-xl font-inter antialiased text-center mb-4">
+          10+ technologies. Just ask.
+        </p>
         <Marquee
           gradient={true}
           gradientColor={mode ? "black" : "white"}
