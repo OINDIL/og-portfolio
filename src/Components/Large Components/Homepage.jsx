@@ -81,9 +81,13 @@ function Homepage() {
     <i className="fa-brands fa-php"></i>,
   ];
   return (
-    <div className={`${mode ? `bg-black text-white` : null}`}>
+    <div className={`${mode && `bg-black text-white`}`}>
       <motion.section
-        className={`p-12 font-inter flex flex-col gap-5 transition ease-linear duration-300 max-w-6xl mx-auto`}
+        className={`p-12 font-inter flex flex-col gap-5 transition ease-linear duration-300 max-w-6xl mx-auto ${
+          !mode
+            ? `bg-[radial-gradient(ellipse_at_center,#6684de,#FFF_70%)]`
+            : `bg-[radial-gradient(ellipse_at_center,#6684de,#000_70%)]`
+        }`}
         initial={{ x: -80, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
@@ -116,7 +120,7 @@ function Homepage() {
               <span
                 className={` ${
                   mode
-                    ? `bg-gradient-to-r from-blue-900 to-blue-300`
+                    ? `bg-gradient-to-r from-blue-900 from-40% to-black`
                     : `bg-gradient-to-l from-blue-900 to-black`
                 } text-transparent bg-clip-text`}
               >
@@ -128,14 +132,14 @@ function Homepage() {
                   alt=""
                   width={70}
                   height={70}
-                  className="inline rounded-full mb-2"
+                  className="inline rounded-full mb-2 hover:scale-110 transition ease-in-out duration-300 hover:cursor-pointer"
                 />
               </span>{" "}
               Bike Enthusiast,{" "}
               <span
                 className={`${
                   mode
-                    ? `bg-gradient-to-r from-blue-900 to-blue-300`
+                    ? `bg-gradient-to-r from-blue-900 to-black`
                     : `bg-gradient-to-l from-blue-900 to-black`
                 } text-transparent bg-clip-text`}
               >
@@ -165,7 +169,11 @@ function Homepage() {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row gap-2"
         >
-          <span className="font-semibold antialiased inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow">
+          <span
+            className={`font-semibold antialiased inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow ${
+              mode ? `bg-black text-white` : `bg-white text-black`
+            }`}
+          >
             <div className="w-[10px] h-[10px] bg-green-500 rounded-full"></div>
             Open to work
           </span>
@@ -276,16 +284,14 @@ function Homepage() {
           <div className="mb-2">
             {stackOption === 0 ? (
               <div>
-                <p className="antialiased font-semibold text-xl">
-                  Tech Stack
-                </p>
+                <p className="antialiased font-semibold text-xl">Tech Stack</p>
                 <p
                   className={`font-normal ${
                     mode ? `text-gray-300` : `text-gray-600`
                   }`}
                 >
-                  It includes front-end tools like React JS, Tailwind
-                  CSS and backend tools like Node and its framework Express JS.
+                  It includes front-end tools like React JS, Tailwind CSS and
+                  backend tools like Node and its framework Express JS.
                 </p>
               </div>
             ) : (
