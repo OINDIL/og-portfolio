@@ -19,6 +19,12 @@ import TechStack from "../Small Components/TechStack";
 import { useDarkContext } from "../Contexts/DarkModeContext";
 import ExperienceComponent from "../Small Components/ExperienceComponent";
 import { educationBackground, experience, techStack } from "../../Assets/data";
+import {
+  GlowingStarsBackgroundCard,
+  GlowingStarsDescription,
+  GlowingStarsTitle,
+  Illustration,
+} from "../ui/glowing-component";
 function Homepage() {
   // CONTEXT
   const { mode } = useDarkContext();
@@ -214,10 +220,25 @@ function Homepage() {
         className="max-w-6xl mx-auto p-12 font-inter"
       >
         <h2 className="sm:text-2xl text-xl font-bold">My experiences</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 mt-2">
           {experience.map((experience, index) => (
             <div key={index}>
-              <ExperienceComponent experience={experience} />
+              <GlowingStarsBackgroundCard>
+                <GlowingStarsTitle>
+                  <a
+                    href={experience.link}
+                    target="_blank"
+                    className="hover:underline underline-offset-2"
+                  >
+                    {experience.company}
+                  </a>{" "}
+                  · {experience.years}
+                </GlowingStarsTitle>
+                <p className={"text-white/60"}>{experience.domain}</p>
+                <GlowingStarsDescription className={"text-gray-300 font-light"}>
+                  {experience.desc}
+                </GlowingStarsDescription>
+              </GlowingStarsBackgroundCard>
             </div>
           ))}
         </div>
