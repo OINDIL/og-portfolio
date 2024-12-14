@@ -248,8 +248,8 @@ function Homepage() {
                   </a>{" "}
                   · {experience.years}
                 </GlowingStarsTitle>
-                <p className={"text-white/60"}>{experience.domain}</p>
-                <GlowingStarsDescription className={"text-gray-300 font-light"}>
+                <p className={"text-white/70"}>{experience.domain}</p>
+                <GlowingStarsDescription className={"text-white/60 font-light"}>
                   {experience.desc}
                 </GlowingStarsDescription>
               </GlowingStarsBackgroundCard>
