@@ -22,7 +22,6 @@ import {
   GlowingStarsBackgroundCard,
   GlowingStarsDescription,
   GlowingStarsTitle,
-  Illustration,
 } from "../ui/glowing-component";
 function Homepage() {
   // CONTEXT
@@ -270,7 +269,11 @@ function Homepage() {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="sm:text-7xl text-5xl"
+            className={`${
+              mode
+                ? `bg-gradient-to-b from-white from-40% to-black`
+                : `bg-gradient-to-t from-black from-40% to-white/60`
+            } text-transparent bg-clip-text sm:text-7xl text-5xl`}
           >
             Let's learn{" "}
             <span
@@ -417,7 +420,11 @@ function Homepage() {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="sm:text-7xl text-5xl font-bold"
+          className={`text-5xl sm:text-7xl font-bold pb-2 ${
+            mode
+              ? `bg-gradient-to-b from-white from-40% to-black`
+              : `bg-gradient-to-t from-black from-40% to-white/60`
+          } text-transparent bg-clip-text`}
         >
           Let's go{" "}
           <span
