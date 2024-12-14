@@ -17,7 +17,6 @@ import ContactForm from "../Small Components/ContactForm";
 import TechStack from "../Small Components/TechStack";
 
 import { useDarkContext } from "../Contexts/DarkModeContext";
-import ExperienceComponent from "../Small Components/ExperienceComponent";
 import { educationBackground, experience, techStack } from "../../Assets/data";
 import {
   GlowingStarsBackgroundCard,
@@ -122,7 +121,15 @@ function Homepage() {
               id="title-2"
               className={`sm:text-7xl text-5xl tracking-tight antialiased font-bold`}
             >
-              Full Stack Web Dev,{" "}
+              <span
+                className={`${
+                  mode
+                    ? `bg-gradient-to-b from-white from-40% to-black`
+                    : `bg-gradient-to-t from-black from-40% to-white/60`
+                } text-transparent bg-clip-text`}
+              >
+                Full Stack Web Dev,{" "}
+              </span>
               <span
                 className={` ${
                   mode
@@ -141,7 +148,15 @@ function Homepage() {
                   className="inline rounded-full mb-2 hover:scale-110 transition ease-in-out duration-300 hover:cursor-pointer"
                 />
               </span>{" "}
-              Bike Enthusiast,{" "}
+              <span
+                className={`${
+                  mode
+                    ? `bg-gradient-to-b from-white from-40% to-black`
+                    : `bg-gradient-to-t from-black from-40% to-white/60`
+                } text-transparent bg-clip-text`}
+              >
+                Bike Enthusiast,{" "}
+              </span>
               <span
                 className={`${
                   mode
