@@ -98,7 +98,7 @@ function Homepage() {
         viewport={{ once: true }}
       >
         <div className="home-headings flex flex-col gap-5">
-          <motion.p
+          {/* <motion.p
             initial={{ x: -80, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
@@ -109,7 +109,21 @@ function Homepage() {
             }`}
           >
             Hello! I'm Oindil.
-          </motion.p>
+          </motion.p> */}
+
+          {/* WIP: Header element */}
+          <motion.span
+            initial={{ x: -80, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <button className="px-5 py-1 border rounded-full shadow-[0_38px_35px_rgba(0,0,0,0.25)] text-sm hover:shadow-lg hover:font-semibold transition-all ease-linear duration-100">
+              <a href="https://github.com/OINDIL" target="_blank">
+                Visit my GitHub →
+              </a>
+            </button>
+          </motion.span>
 
           <div className="max-w-full md:max-w-3xl">
             <motion.h1
