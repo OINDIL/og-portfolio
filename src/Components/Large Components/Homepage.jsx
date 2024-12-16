@@ -23,12 +23,31 @@ import {
   GlowingStarsDescription,
   GlowingStarsTitle,
 } from "../ui/glowing-component";
+
+import { TbBrandFiverr } from "react-icons/tb";
+import { SiFiverr } from "react-icons/si";
+
 function Homepage() {
   // CONTEXT
   const { mode } = useDarkContext();
 
   // States
   const [stackOption, setStackOption] = useState(0);
+  const [hover, setHover] = useState(false);
+  const [clicked, setClicked] = useState(false);
+
+  const fiverrLink = "https://www.fiverr.com/s/LdPQ26Y";
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setClicked(true);
+      })
+      .catch((err) => {
+        console.error("Failed to copy text: ", err);
+      });
+  };
 
   const projects = [
     {
@@ -98,20 +117,6 @@ function Homepage() {
         viewport={{ once: true }}
       >
         <div className="home-headings flex flex-col gap-5">
-          {/* <motion.p
-            initial={{ x: -80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            id="title-1"
-            className={`sm:text-2xl text-xl font-inter ${
-              mode ? `text-gray-400` : `text-gray-600`
-            }`}
-          >
-            Hello! I'm Oindil.
-          </motion.p> */}
-
-          {/* WIP: Header element */}
           <motion.span
             initial={{ x: -80, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -119,7 +124,11 @@ function Homepage() {
             viewport={{ once: true }}
           >
             <button className="px-5 py-1 border rounded-full shadow-[0_38px_35px_rgba(0,0,0,0.25)] text-sm hover:shadow-lg hover:font-semibold transition-all ease-linear duration-100">
-              <a href="https://github.com/OINDIL" target="_blank">
+              <a
+                href="https://github.com/OINDIL"
+                target="_blank"
+                className="flex items-center"
+              >
                 Visit my GitHub →
               </a>
             </button>
@@ -204,12 +213,40 @@ function Homepage() {
           className="flex flex-col sm:flex-row gap-2"
         >
           <span
-            className={`font-semibold antialiased inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow ${
+            className={`font-semibold antialiased inline-flex items-center gap-2 px-4 py-3 rounded-full border shadow w-full md:w-auto  hover:cursor-pointer ${
               mode ? `bg-black text-white` : `bg-white text-black`
             }`}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
           >
             <div className="w-[10px] h-[10px] bg-green-500 rounded-full"></div>
-            Open to work
+            <span className="leading-none w-full hidden md:block">
+              {!hover ? (
+                "Open to work"
+              ) : (
+                <span className="flex justify-between gap-4">
+                  Visit Fiverr
+                  <span
+                    className="hover:underline hover:scale-105 transition-all ease-linear duration-100"
+                    onClick={() => copyToClipboard(fiverrLink)}
+                  >
+                    {clicked ? "Copied!" : "Copy"}
+                  </span>
+                </span>
+              )}
+            </span>
+            <span className="inline-flex justify-between w-full md:hidden leading-none">
+              Open to Work
+              <span onClick={() => copyToClipboard(fiverrLink)}>
+                {clicked ? (
+                  "Copied!"
+                ) : (
+                  <button className="flex items-center gap-1">
+                    <TbBrandFiverr /> <span className="underline">Link</span>
+                  </button>
+                )}
+              </span>
+            </span>
           </span>
           <LetsTalk hover={false} />
         </motion.div>
