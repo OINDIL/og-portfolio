@@ -14,7 +14,7 @@ export const GlowingStarsBackgroundCard = ({ className, children }) => {
         setMouseEnter(false);
       }}
       className={cn(
-        "bg-[linear-gradient(110deg,#333_0.6%,#222)] p-4 h-full w-full rounded-xl border border-[#eaeaea] dark:border-neutral-600",
+        `bg-[linear-gradient(110deg,#333_0.6%,#222)] p-4 h-full w-full rounded-xl border border-[#eaeaea] dark:border-neutral-600`,
         className
       )}
     >

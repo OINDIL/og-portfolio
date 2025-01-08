@@ -25,7 +25,6 @@ import {
 } from "../ui/glowing-component";
 
 import { TbBrandFiverr } from "react-icons/tb";
-import { SiFiverr } from "react-icons/si";
 
 function Homepage() {
   // CONTEXT
