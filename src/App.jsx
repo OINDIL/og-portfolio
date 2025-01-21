@@ -23,9 +23,7 @@ function App() {
     {
       path: "/og-portfolio/weather",
       element: (
-        <ScrollToTop>
-          <WeatherDesc />
-        </ScrollToTop>
+        <ScrollToTop> <WeatherDesc /> </ScrollToTop>
       ),
     },
     {

@@ -25,6 +25,7 @@ import {
 } from "../ui/glowing-component";
 
 import { TbBrandFiverr } from "react-icons/tb";
+import { PhotoGalleryComponent } from "../Small Components/AceternityUsable/PhotoGalleryComponent";
 
 function Homepage() {
   // CONTEXT
@@ -253,7 +254,7 @@ function Homepage() {
       {/* PROJECTS */}
       <section
         id="projects"
-        className={`projects-container p-12 transition ease-linear duration-300 max-w-6xl mx-auto`}
+        className={`projects-container px-12 transition ease-linear duration-300 max-w-6xl mx-auto`}
       >
         <div className="font-inter flex items-center justify-between mb-6">
           <motion.p
@@ -307,6 +308,14 @@ function Homepage() {
           ))}
         </div>
       </motion.section>
+
+      <section className="max-w-6xl mx-auto px-12">
+        <p className="sm:text-2xl text-xl font-bold">
+          An Enthusiast Photographer Also 📸
+        </p>
+
+        <PhotoGalleryComponent />
+      </section>
       {/* ABOUT PAGE */}
 
       <section
